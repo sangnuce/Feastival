@@ -1,0 +1,21 @@
+$dark-grey: #888;
+
+.group-card {
+  border-radius: 3%;
+  box-shadow: 10px 10px 5px $dark-grey;
+  margin: 40px;
+  padding: 40px;
+
+  .card-img-top {
+    max-width: 100%;
+  }
+}
+
+.group-show {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}

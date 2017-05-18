@@ -8,7 +8,7 @@ class CreateGroups < ActiveRecord::Migration[5.0]
       t.boolean :completed, default: false
       t.integer :size
       t.integer :creator_id, index: true
-      t.references :caterogy_id
+      t.integer :category_id
 
       t.timestamps
     end

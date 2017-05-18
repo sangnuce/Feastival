@@ -1,0 +1,22 @@
+<div class="container">
+  <%= form_for group do |f| %>
+
+    <%= f.label :category %>
+    <%= f.select :category_id, categories, {}, {class: "form-control"} %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+
+    <%= f.label :time %>
+    <%= f.datetime_field :time, class: "form-control" %>
+
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control" %>
+
+    <%= f.label :size %>
+    <%= f.number_field :size, class: "form-control" %>
+
+    <%= f.submit t(".create_group"), class: "btn btn-primary" %>
+
+  <% end %>
+</div>
