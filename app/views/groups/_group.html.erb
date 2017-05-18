@@ -1,17 +1,25 @@
-<div class="col-md-6">
+<div class="col-md-6 group" id="group-<%= group.id %>"
+  data-id="<%= group.id %>"
+  data-lng="<%= group.longitude %>"
+  data-lat="<%= group.latitude %>"
+  data-distance="">
   <div class="card group-card">
     <%= image_tag "dinner.jpg", class: "card-img-top" %>
     <div class="card-block center">
       <h3 class="card-title"><%= group.category.name %></h3>
       <h4 class="card-text"><%= group.title %></h4>
+
     </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= group.time %></li>
-        <li class="list-group-item"><%= group.address %></li>
-        <li class="list-group-item"><%=  t ".creator" %>
-          <%= group.creator.email %></li>
-        <li class="list-group-item"><%= link_to t(".join"),
-          class: "btn btn-primary" %></li>
-      </ul>
-    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= t ".nearby" %>
+        <span class="distance"></span> <%= t ".km" %>
+      </li>
+      <li class="list-group-item"><%= group.time %></li>
+      <li class="list-group-item"><%= group.address %></li>
+      <li class="list-group-item"><%=  t ".creator" %>
+        <%= group.creator.email %></li>
+      <li class="list-group-item"><%= link_to t(".join"),
+        class: "btn btn-primary" %></li>
+    </ul>
   </div>
+</div>

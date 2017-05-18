@@ -7,12 +7,20 @@ vi:
     formats:
       date_month_year_concise: "%d-%m-%Y"
   groups:
+    index:
+      new: "Tạo nhóm mới"
     group:
+      nearby: "Cách đây"
+      km: "km"
       size: "Số lượng: "
       join: "Tham gia"
       creator: "Người tạo: "
     group_form:
       category: "Chọn thể loại phòng ăn"
+      title: "Tên nhóm"
+      time: "Thời gian"
+      address: "Địa chỉ"
+      size: "Số lượng người tham gia"
       create_group: "Tạo nhóm"
     create:
       created: "Tạo nhóm thành công"
@@ -88,3 +96,16 @@ vi:
         btn_confirm: "Nhập lại mật khẩu"
         btn_password: "Mật khẩu"
         email: "Email"
+  activerecord:
+    errors:
+      models:
+        group:
+          attributes:
+            address:
+              blank: "Hãy chọn địa chỉ"
+            time:
+              blank: "Thời gian chính xác"
+            size:
+              blank: "Nhập số lượng người dự kiến"
+            title:
+              blank: "Hãy nhập tiêu đề cho nhóm của bạn"

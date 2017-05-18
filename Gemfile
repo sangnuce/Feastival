@@ -21,6 +21,7 @@ gem "carrierwave"
 gem "devise"
 gem "config"
 gem "mini_magick"
+gem "geocoder"
 gem "cancancan"
 
 group :development, :test do
