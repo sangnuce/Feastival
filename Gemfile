@@ -20,6 +20,8 @@ gem "kaminari"
 gem "carrierwave"
 gem "devise"
 gem "config"
+gem "mini_magick"
+gem "cancancan"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
