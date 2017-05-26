@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519033128) do
+ActiveRecord::Schema.define(version: 20170521021642) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170519033128) do
     t.integer  "category_id"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.index ["category_id"], name: "index_groups_on_category_id"
     t.index ["creator_id"], name: "index_groups_on_creator_id"
   end
 
@@ -75,15 +74,15 @@ ActiveRecord::Schema.define(version: 20170519033128) do
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
     t.date     "birthday"
-    t.integer  "gender"
+    t.integer  "gender",      default: 0, null: false
     t.text     "address"
     t.string   "job"
     t.string   "phonenumber"
     t.string   "avatar"
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -108,6 +107,7 @@ ActiveRecord::Schema.define(version: 20170519033128) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "activated",           default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
