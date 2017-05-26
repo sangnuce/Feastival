@@ -1,0 +1,140 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+ //Forms-profile
+
+$red: #f00;
+$gray: #bbb;
+$black: #000;
+$white: #fff;
+$color-name: #5a7391;
+$blue-hover: #6686f9;
+$background-key: #dee8f7;
+$color-details: #5b9bd1;
+$background-hover: #fafcfd;
+
+.form-profile {
+  input,
+  textarea,
+  select,
+  .uneditable-input {
+    border: 1px solid $gray;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  input {
+    height: auto !important;
+  }
+
+  .checkbox {
+    margin-bottom: 10px;
+    margin-top: -10px;
+
+    span {
+      font-weight: normal;
+      margin-left: 20px;
+    }
+  }
+
+  .title-profile {
+    text-align: center;
+  }
+}
+
+//Profile container
+.profile {
+  margin: 20px 0;
+}
+
+// Profile sidebar
+.profile-sidebar {
+  background: $background-key;
+  padding: 20px 0 10px;
+}
+
+.profile-userpic img {
+  border-radius: 50% !important;
+  float: none;
+  height: 50%;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.profile-usertitle-name {
+  color: $color-name;
+  font-family: 'Times New Roman';
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 7px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.profile-usertitle-main {
+  color: $color-details;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 7px;
+  margin-left: 40px;
+}
+
+.profile-userbuttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.profile-userbuttons .btn {
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 5px;
+  padding: 6px 15px;
+  text-transform: uppercase;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid $white;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: 0;
+}
+
+.profile-usermenu {
+
+  a {
+    color: $color-name;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.profile-usermenu {
+
+  i {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+}
+
+.profile-usermenu {
+  a:hover {
+    background-color: $background-hover;
+    color: $blue-hover;
+  }
+}
+
+// Profile Content
+.profile-content {
+  background: $background-key;
+  min-height: 465px;
+  padding: 20px;
+}

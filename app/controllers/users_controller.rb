@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit profile_attributes: [:id, :name, :birthday,
+    params.require(:user).permit profile_attributes: [:name, :birthday,
       :gender, :address, :job, :phonenumber, :avatar, :description]
   end
 
