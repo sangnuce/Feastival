@@ -1,5 +1,11 @@
 vi:
   not_found: "Không tìm thấy"
+  error_create_profile: "Xảy ra lỗi khi tạo profile"
+  error_update_profile: "Xảy ra lỗi khi cập nhật profile"
+  notfound_user: "Không tìm thấy người dùng"
+  date:
+    formats:
+      date_month_year_concise: "%d-%m-%Y"
   groups:
     group:
       size: "Số lượng: "
@@ -11,9 +17,6 @@ vi:
     create:
       created: "Tạo nhóm thành công"
       not_created: "Không tạo được nhóm"
-  error_create_profile: "Xảy ra lỗi khi tạo profile"
-  error_update_profile: "Xảy ra lỗi khi cập nhật profile"
-  notfound_user: "Không tìm thấy người dùng"
   genders:
     male: Nam
     female: Nữ
@@ -54,6 +57,21 @@ vi:
         forgot_password: "Quên mật khẩu?"
         email: "Email"
         btn_password: "Mật khẩu"
+  users:
+    edit:
+      title: "Thông tin cá nhân"
+      button_text: "Cập nhật"
+    show:
+      title: "Thông tin cá nhân"
+      gender: "Giới tính: "
+      birthday: "Ngày sinh: "
+      job: "Nghề nghiệp: "
+      address: "Địa chỉ: "
+      phonenumber: "Số điện thoại: "
+      edit: "Thay đổi"
+      home: "Trang chủ"
+      created: "Nhóm đã tạo"
+      joined: "Nhóm đã tham gia"
     registrations:
       new:
         title: "Đăng ký"
@@ -70,18 +88,3 @@ vi:
         btn_confirm: "Nhập lại mật khẩu"
         btn_password: "Mật khẩu"
         email: "Email"
-  users:
-    edit:
-      title: "Thông tin cá nhân"
-      button_text: "Cập nhật"
-    show:
-      title: "Thông tin cá nhân"
-      gender: "Giới tính: "
-      birthday: "Ngày sinh: "
-      job: "Nghề nghiệp: "
-      address: "Địa chỉ: "
-      phonenumber: "Số điện thoại: "
-      edit: "Thay đổi"
-      home: "Trang chủ"
-      created: "Nhóm đã tạo"
-      joined: "Nhóm đã tham gia"

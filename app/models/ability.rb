@@ -7,6 +7,7 @@ class Ability
       can :manage, :all
     else
       can [:create, :new], Group
+      can [:edit, :update], User, id: user.id
     end
   end
 end

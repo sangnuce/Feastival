@@ -1,0 +1,55 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <div class="row profile">
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <div class="profile-userpic">
+          <%= image_tag @user.profile.avatar_url.to_s,
+            class: "img-responsive" %>
+        </div>
+        <div class="profile-usertitle-name">
+          <%= @user.profile.name %>
+        </div>
+        <div class="profile-usertitle-main">
+          <%= t ".gender" %><%= t "genders.#{@user.profile.gender}" %>
+        </div>
+        <div class="profile-usertitle-main">
+          <%= t ".birthday" %><%= I18n.localize @user.profile.birthday,
+            format: :date_month_year_concise %>
+        </div>
+        <div class="profile-usertitle-main">
+          <%= t ".job" %><%= @user.profile.job %>
+        </div>
+        <div class="profile-usertitle-main">
+          <%= t ".address" %><%= @user.profile.address %>
+        </div>
+        <div class="profile-usertitle-main">
+          <%= t ".phonenumber" %><%= @user.profile.phonenumber %>
+        </div>
+        <% if @user.current_user? current_user %>
+          <div class="profile-userbuttons">
+            <%= link_to t(".edit"), edit_user_path(@user),
+              class: "btn btn-success btn-sm" %>
+          </div>
+          <div class="profile-usermenu">
+            <ul class="nav">
+              <li>
+                <%= link_to t(".created"), "#",
+                  class: "glyphicon glyphicon-ok" %>
+              </li>
+              <li>
+                <%= link_to t(".joined"), "#",
+                  class: "glyphicon glyphicon-flag" %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="profile-content">
+
+      </div>
+    </div>
+  </div>
+</div>

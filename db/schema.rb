@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20170521021642) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.boolean  "activated",           default: false
+    t.boolean  "activated",           default: true
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

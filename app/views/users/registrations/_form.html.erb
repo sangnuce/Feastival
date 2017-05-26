@@ -1,0 +1,56 @@
+<%= form_for user do |f| %>
+  <%= render "shared/error_messages", object: f.object  %>
+
+  <% if f.object.new_record? %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: "form-control",
+      placeholder: t(".email") %>
+
+    <%= f.label :password, t(".btn_password") %>
+    <%= f.password_field :password, class: "form-control",
+      placeholder: t(".btn_password") %>
+
+    <%= f.label :password_confirmation, t(".btn_confirm") %>
+    <%= f.password_field :password_confirmation,
+      class: "form-control", placeholder: t(".btn_confirm")  %>
+  <% end %>
+
+  <%= f.fields_for :profile do |profile| %>
+
+    <%= profile.label :name, t(".name") %>
+    <%= profile.text_field :name, class: "form-control",
+      placeholder: t(".name") %>
+
+    <%= profile.label :birthday, t(".birthday") %>
+    <%= profile.date_field :birthday, class: "form-control" %>
+
+    <%= profile.label :gender, t(".gender") %>
+    <% if profile.object.new_record? %>
+      <%= profile.select :gender, options_for_select(select_genders),{},
+        {class: "form-control"} %>
+    <% else %>
+      <%= profile.select :gender, options_for_select(select_genders),
+        {selected: profile.object.gender}, {class: "form-control"} %>
+    <% end %>
+
+    <%= profile.label :address, t(".address") %>
+    <%= profile.text_field :address, class: "form-control",
+      placeholder: t(".address") %>
+
+    <%= profile.label :job, t(".job") %>
+    <%= profile.text_field :job, class: "form-control",
+      placeholder: t(".job") %>
+
+    <%= profile.label :phonenumber, t(".phonenumber") %>
+    <%= profile.text_field :phonenumber, class: "form-control",
+      placeholder: t(".phonenumber") %>
+
+    <%= profile.label :description, t(".description") %>
+    <%= profile.text_area :description, class: "form-control",
+      placeholder: t(".description") %>
+
+    <%= profile.label :avatar %>
+    <%= profile.file_field :avatar, accept: "image/png,image/jpeg" %>
+  <% end %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

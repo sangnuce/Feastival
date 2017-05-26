@@ -12,9 +12,9 @@ class User < ApplicationRecord
   has_many :notifications, dependent: :destroy
   has_many :reports, dependent: :destroy, foreign_key: :reporter_id
 
-  accepts_nested_attributes_for :profile
+  accepts_nested_attributes_for :profile, update_only: true
 
   def current_user? user
-    self == user
+    user == self
   end
 end
