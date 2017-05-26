@@ -1,4 +1,17 @@
 vi:
+  not_found: "Không tìm thấy"
+  groups:
+    group:
+      size: "Số lượng: "
+      join: "Tham gia"
+      creator: "Người tạo: "
+    group_form:
+      category: "Chọn thể loại phòng ăn"
+      create_group: "Tạo nhóm"
+    create:
+      created: "Tạo nhóm thành công"
+      not_created: "Không tạo được nhóm"
+
   pages:
     home:
       title: "Feastival"
@@ -42,4 +55,5 @@ vi:
         btn_confirm: "Nhập lại mật khẩu"
         btn_password: "Mật khẩu"
         email: "Email"
+
 

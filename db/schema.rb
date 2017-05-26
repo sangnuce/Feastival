@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20170519033128) do
 
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "group_users", force: :cascade do |t|
     t.integer  "group_id"
     t.integer  "user_id"
@@ -26,13 +32,13 @@ ActiveRecord::Schema.define(version: 20170519033128) do
     t.datetime "time"
     t.text     "address"
     t.text     "other"
-    t.boolean  "completed",      default: false
+    t.boolean  "completed",   default: false
     t.integer  "size"
     t.integer  "creator_id"
-    t.integer  "caterogy_id_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.index ["caterogy_id_id"], name: "index_groups_on_caterogy_id_id"
+    t.integer  "category_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["category_id"], name: "index_groups_on_category_id"
     t.index ["creator_id"], name: "index_groups_on_creator_id"
   end
 
