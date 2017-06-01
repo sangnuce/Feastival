@@ -10,8 +10,7 @@ class Profile < ApplicationRecord
   validates :gender, presence: true
   validates :address, presence: true, length: {maximum: 300}
   validates :job, presence: true, length: {maximum: 200}
-  validates :phonenumber, presence: true, numericality: true,
-    length: {minimum: 10, maximum: 15}
+  validates :phonenumber, presence: true
 
   class << self
     def gender_attributes_for_select

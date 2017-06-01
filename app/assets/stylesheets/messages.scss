@@ -1,0 +1,170 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+ //Messages
+$color-details: #5b9bd1;
+$gray-hover: #c4c5c6;
+$gray-chat: #fbf9fa;
+$gray-message: #f5f3f3;
+$gray-background-body: #cbdbf4;
+$blue-background-body: #2390d3;
+$white: #fff;
+
+.user-menu {
+  border: 1px solid $gray-hover;
+  font-size: 20px;
+  font-style: bold;
+  height: 40px;
+  text-align: center;
+ }
+
+.message-menu {
+  border-bottom: 1px solid $gray-hover;
+  border-top: 1px solid $gray-hover;
+  font-size: 20px;
+  font-style: bold;
+  height: 40px;
+  text-align: center;
+}
+
+.info-menu {
+  border: 1px solid $gray-hover;
+  font-size: 20px;
+  font-style: bold;
+  height: 40px;
+  text-align: center;
+ }
+
+.users {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+  li {
+    border-bottom: 1px solid $gray-lighter;
+    overflow: auto;
+    padding: 10px;
+  }
+
+  li:hover {
+    background-color: $gray-lighter;
+  }
+}
+
+.img-circle {
+  width: 40px;
+}
+
+.chat-area {
+  float: left;
+  height: 420px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.chat-area li {
+  padding: 10px 10px 0;
+}
+
+.chat-area .chat-img1 img {
+  height: 30px;
+  width: 30px;
+}
+
+.chat-area .chat-body1 {
+  margin-left: 0;
+}
+
+.chat-area .chat-body2 {
+  margin-right: 0;
+}
+
+.chat-body1 p {
+  background: $gray-chat none repeat scroll 0 0;
+  background-color: $gray-background-body;
+  border-radius: 8px;
+  margin: 0 0 0 40px;
+  padding-left: 15px;
+}
+
+.chat-body2 p {
+  background: $gray-chat none repeat scroll 0 0;
+  background-color: $blue-background-body;
+  border-radius: 8px;
+  color: $white;
+  margin: 0 40px 0 0;
+  padding-left: 15px;
+}
+
+.chat-area li:last-child {
+  padding-bottom: 10px;
+}
+
+.message-write {
+  background: $gray-message none repeat scroll 0 0;
+  float: left;
+  padding: 10px;
+  width: 100%;
+}
+
+.message-write .form-control {
+  height: 70px;
+  padding: 10px;
+}
+
+.btn-send {
+  float: right;
+  width: 60px;
+}
+
+.type-message {
+  float: left;
+  width: 560px;
+}
+
+.list-users {
+  border-right: 1px solid $gray-hover;
+  height: 505px !important;
+}
+
+.info-group {
+  border-left: 1px solid $gray-hover;
+  height: 505px !important;
+}
+
+.info-group {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+  li {
+    border-bottom: 1px solid $gray-lighter;
+    overflow: auto;
+    padding: 10px;
+  }
+
+  li:hover {
+    background-color: $gray-lighter;
+  }
+}
+
+.user-profile {
+  float: left;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 3%;
+  margin-top: 3%;
+  width: 65%;
+}
+
+.avatar-message {
+  float: left;
+}
+
+.delete-user {
+  float: left;
+  height: 40px;
+  margin-top: 3px;
+  width: 18%;
+}

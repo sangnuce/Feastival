@@ -6,9 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-("a".."j").each do |a|
-  Category.create(
-    name: "#{a}"*6
-  )
-end
+Category.create name: "An trua"
+Category.create name: "An toi"
+Category.create name: "An vat"
+Category.create name: "Uong bia"
