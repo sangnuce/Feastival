@@ -25,13 +25,8 @@
     <%= profile.date_field :birthday, class: "form-control" %>
 
     <%= profile.label :gender, t(".gender") %>
-    <% if profile.object.new_record? %>
-      <%= profile.select :gender, options_for_select(select_genders),{},
-        {class: "form-control"} %>
-    <% else %>
-      <%= profile.select :gender, options_for_select(select_genders),
-        {selected: profile.object.gender}, {class: "form-control"} %>
-    <% end %>
+    <%= profile.select :gender, options_for_select(select_genders,
+      profile.object.gender), {}, {class: "form-control"} %>
 
     <%= profile.label :address, t(".address") %>
     <%= profile.text_field :address, class: "form-control",

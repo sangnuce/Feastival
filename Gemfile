@@ -23,6 +23,7 @@ gem "config"
 gem "mini_magick"
 gem "geocoder"
 gem "cancancan"
+gem "redis"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => "/cable"
+
   get "pages/:page", to: "pages#show", as: "page"
   root "pages#show", page: "home"
 
@@ -14,4 +16,5 @@ Rails.application.routes.draw do
 
   resources :groups, except: :destroy
   resources :users, except: [:index, :destroy]
+  resources :group_users, only: [:create, :destroy]
 end

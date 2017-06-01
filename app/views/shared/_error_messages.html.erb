@@ -4,8 +4,8 @@
       <%= t ".contain_form" %> <%= pluralize object.errors.count, t(".error_message") %>.
     </div>
     <ul>
-      <% object.errors.each do |_, msg| %>
-        <li><%= msg %></li>
+      <% object.errors.messages.each do |field, msg| %>
+        <li><%= msg.to_sentence %></li>
       <% end %>
     </ul>
   </div>

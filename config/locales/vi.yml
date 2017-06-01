@@ -15,6 +15,7 @@ vi:
       size: "Số lượng: "
       join: "Tham gia"
       creator: "Người tạo: "
+      chat: "Gửi tin nhắn"
     group_form:
       category: "Chọn thể loại phòng ăn"
       title: "Tên nhóm"
@@ -25,6 +26,20 @@ vi:
     create:
       created: "Tạo nhóm thành công"
       not_created: "Không tạo được nhóm"
+    join:
+      join_group: "Tham gia"
+    info_group:
+      time: "Thời gian: "
+      address: "Địa điểm: "
+      size: "Số lượng: "
+      left_group: "Rời nhóm"
+    show:
+      not_join_group: "Bạn chưa tham gia group này"
+      users: "Thành viên"
+      messages: "Tin nhắn"
+      infomation: "Thông tin"
+    user:
+      delete_user: "Xóa"
   genders:
     male: Nam
     female: Nữ
@@ -96,6 +111,11 @@ vi:
         btn_confirm: "Nhập lại mật khẩu"
         btn_password: "Mật khẩu"
         email: "Email"
+  group_users:
+    create:
+      created_group_user: "Bạn đã tham gia nhóm thành công"
+      not_created_group_user: "Bạn không thể tham gia nhóm này"
+      not_join: "Nhóm đã đầy"
   activerecord:
     errors:
       models:
@@ -109,3 +129,26 @@ vi:
               blank: "Nhập số lượng người dự kiến"
             title:
               blank: "Hãy nhập tiêu đề cho nhóm của bạn"
+        user:
+          attributes:
+            email:
+              blank: "Email không được để trống"
+              taken: "Email đã có người sử dụng"
+            password:
+              blank: "Mật khẩu không được để trống"
+            password_confirmation:
+              confirmation: "Mật khẩu không khớp"
+        profile:
+          attributes:
+            name:
+              blank: "Tên không được để trống"
+            birthday:
+              blank: "Ngày sinh không được để trống"
+            address:
+              blank: "Địa chỉ không được để trống"
+            job:
+              blank: "Nghề nghiệp không được để trống"
+            phonenumber:
+              blank: "Số điện thoại không được để trống"
+              not_a_number: "Số điện thoại phải để dạng số"
+              too_short: "Số điện thoại quá ngắn"

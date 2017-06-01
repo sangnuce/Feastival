@@ -225,6 +225,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    redis (3.3.3)
     reek (4.6.2)
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.4.0.0, < 2.5)
@@ -362,6 +363,7 @@ DEPENDENCIES
   rails (~> 5.0.2)
   rails-controller-testing
   rails_best_practices
+  redis
   reek
   rspec-activemodel-mocks
   rspec-collection_matchers
