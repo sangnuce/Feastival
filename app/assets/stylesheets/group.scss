@@ -1,7 +1,9 @@
 $dark-grey: #888;
 
 .group-card {
+  border-left: solid 2px;
   border-radius: 3%;
+  border-top: solid 2px;
   box-shadow: 10px 10px 5px $dark-grey;
   margin: 40px;
   padding: 40px;
@@ -18,4 +20,8 @@ $dark-grey: #888;
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.group-new-btn {
+  text-align: center;
 }

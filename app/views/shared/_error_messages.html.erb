@@ -4,7 +4,7 @@
       <%= t ".contain_form" %> <%= pluralize object.errors.count, t(".error_message") %>.
     </div>
     <ul>
-      <% object.errors.full_messages.each do |msg| %>
+      <% object.errors.each do |_, msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>

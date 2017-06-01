@@ -9,6 +9,8 @@ class CreateGroups < ActiveRecord::Migration[5.0]
       t.integer :size
       t.integer :creator_id, index: true
       t.integer :category_id
+      t.float :longitude
+      t.float :latitude
 
       t.timestamps
     end

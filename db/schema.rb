@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20170521021642) do
     t.integer  "size"
     t.integer  "creator_id"
     t.integer  "category_id"
+    t.float    "longitude"
+    t.float    "latitude"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.index ["creator_id"], name: "index_groups_on_creator_id"
