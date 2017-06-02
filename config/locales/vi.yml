@@ -16,6 +16,7 @@ vi:
       join: "Tham gia"
       creator: "Người tạo: "
       chat: "Gửi tin nhắn"
+      info: "Thông tin"
     group_form:
       category: "Chọn thể loại phòng ăn"
       title: "Tên nhóm"
@@ -40,6 +41,7 @@ vi:
       infomation: "Thông tin"
     user:
       delete_user: "Xóa"
+      delete: "Bạn có muốn xóa người dùng này không?"
   genders:
     male: Nam
     female: Nữ

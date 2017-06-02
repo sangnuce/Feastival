@@ -14,6 +14,7 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.owned_groups.build group_params
     if @group.save
+      current_user.group_users.create! group_id: @group.id
       flash[:success] = t ".created"
       redirect_to @group
     else
@@ -23,6 +24,8 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @message = Message.new
+    @group_user = @group.group_users.build
   end
 
   private
