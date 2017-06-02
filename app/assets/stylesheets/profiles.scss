@@ -50,6 +50,7 @@ $background-hover: #fafcfd;
 // Profile sidebar
 .profile-sidebar {
   background: $background-key;
+  min-height: 550px;
   padding: 20px 0 10px;
 }
 
@@ -135,6 +136,14 @@ $background-hover: #fafcfd;
 // Profile Content
 .profile-content {
   background: $background-key;
-  min-height: 465px;
+  min-height: 550px;
   padding: 20px;
+}
+
+.group-profile {
+  float: left;
+}
+
+.card-img-group-profile {
+  width: 100%;
 }

@@ -1,0 +1,24 @@
+<div class="col-md-6 group-profile ">
+  <%= image_tag "dinner.jpg", class: "card-img-group-profile" %>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item group-category">
+      <%= link_to group.category.name, group_path(group) %>
+    </li>
+    <li class="list-group-item group-title">
+      <%= t ".group_name" %><%= group.title %>
+    </li>
+    <li class="list-group-item">
+      <p class="title-group"><%= t ".time" %></p>
+      <p><%= l group.time, format: :time_info_message %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="title-group"><%= t ".address" %></p><p><%= group.address %></p>
+    </li>
+    <li class="list-group-item">
+      <p class="title-group"><%= t ".size" %></p><p><%= group.size %></p>
+    </li>
+    <li class="list-group-item"><p class="title-group"><%= t ".creator" %></p>
+      <p><%= link_to group.creator.profile.name, user_path(group.creator) %></p>
+    </li>
+  </ul>
+</div>

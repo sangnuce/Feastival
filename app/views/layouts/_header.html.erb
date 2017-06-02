@@ -18,12 +18,12 @@
           </li>
           <li>
             <%= link_to root_path do %>
-              <span class="glyphicon glyphicon-envelope"></span>
+              <span class="glyphicon glyphicon-bullhorn"></span>
             <% end %>
           </li>
           <li>
             <%= link_to groups_path do %>
-              <span class="glyphicon glyphicon-cog"></span>
+              <span class="glyphicon glyphicon-certificate"></span>
             <% end %>
           </li>
           <li>
@@ -34,6 +34,7 @@
         </ul>
       <% else %>
         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to t(".group"), groups_path %></li>
           <li><%= link_to t(".about"), page_path(page: "about") %></li>
           <li><%= link_to t(".help"), page_path(page: "help") %></li>
           <li><%= link_to t(".contact"), page_path(page: "contact") %></li>
