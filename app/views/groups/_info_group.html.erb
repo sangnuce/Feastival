@@ -1,17 +1,42 @@
-<ul class="info-group">
+<ul class="info-group-ul">
   <li>
-    <p><%= group.category.name %></p>
+    <p class="category-info"><%= group.category.name %></p>
   </li>
   <li>
-    <p><%= group.title %></p>
+    <p class="title-info-bold"><%= t ".name_group" %></p>
+    <p class="title-info"><%= group.title %></p>
   </li>
   <li>
-    <p><%= t ".time" %><%= group.time %></p>
+    <p class="title-info-bold"><%= t ".time" %></p>
+    <p class="title-info"><%= I18n.localize group.time,
+      format: :time_info_message %></p>
   </li>
   <li>
-    <p><%= t ".address" %><%= group.address %></p>
+    <p class="title-info-bold"><%= t ".address" %></p>
+    <p class="title-info"><%= group.address %></p>
   </li>
   <li>
-    <p><%= t ".size" %><%= group.size %></p>
+    <p class="title-info-bold"><%= t ".size" %></p>
+    <p class="title-info"><%= group.size %></p>
   </li>
+  <% if current_user.current_user? group.creator %>
+    <li class="button-left">
+      <%= link_to edit_group_path(group), class:"btn btn-primary" do %>
+        <span class="glyphicon glyphicon-edit"></span>
+        <%= t ".edit" %>
+      <% end %>
+    </li>
+  <% else %>
+    <li class="button-left">
+      <%= link_to group_user_path(@group_supports.leave(current_user)),
+        method: :delete, class:"btn btn-primary" do %>
+        <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        <%= t ".left_group" %>
+      <% end %>
+      <%= link_to "#", class:"btn btn-danger" do %>
+        <span class="glyphicon glyphicon-alert"></span>
+        <%= t ".report" %>
+      <% end %>
+    </li>
+  <% end %>
 </ul>

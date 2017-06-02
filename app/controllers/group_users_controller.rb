@@ -13,12 +13,16 @@ class GroupUsersController < ApplicationController
   end
 
   def destroy
-    group_user = GroupUser.find_by user_id: params[:user_id],
-      group_id: params[:group_id]
-    group_user.destroy
-    respond_to do |format|
-      format.html{redirect_to group_user.group}
-      format.js
+    @group_user = GroupUser.find_by id: params[:id]
+    if @group_user.present?
+      @group_user.destroy
+      respond_to do |format|
+        format.html{redirect_to groups_path}
+        format.js
+      end
+    else
+      flash[:error] = t "not_found_group_user"
+      redirect_to groups_path
     end
   end
 

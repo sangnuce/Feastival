@@ -1,6 +1,7 @@
+<% provide :title, t(".title") %>
 <div class="container-fluid">
   <% if check_join_group @group.id %>
-    <%= render "join", group: @group %>
+    <%= render "show_not_join", group: @group %>
   <% else %>
     <div class="row">
       <div class="message-header">
@@ -17,9 +18,7 @@
       <div class="message-main">
         <div class="col-md-3 list-users">
           <div class="row">
-            <% @group.users.each do |user| %>
-              <%= render "user", user: user, group: @group %>
-            <% end %>
+            <%= render @group.group_users %>
           </div>
         </div>
         <div class="col-md-6">
@@ -31,8 +30,8 @@
               </div>
             </div>
             <div class="message-write">
-              <%= render "messages/message_form", message: @message,
-                group: @group %>
+              <%= render "messages/message_form",
+                message: @group_supports.message, group: @group %>
             </div>
           </div>
         </div>

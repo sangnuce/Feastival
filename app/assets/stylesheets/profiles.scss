@@ -136,7 +136,7 @@ $background-hover: #fafcfd;
 // Profile Content
 .profile-content {
   background: $background-key;
-  min-height: 550px;
+  min-height: 550px !important;
   padding: 20px;
 }
 
