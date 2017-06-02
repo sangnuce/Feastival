@@ -1,0 +1,23 @@
+<ul class="list-unstyled">
+  <% if current_user.current_user? message.user %>
+    <li class="right clearfix">
+     <span class="chat-img1 pull-right">
+        <img src="<%= get_avatar message.user.profile.avatar_url %>"
+          class="img-circle">
+     </span>
+     <div class="chat-body2 clearfix">
+        <p><%= message.content %></p>
+      </div>
+    </li>
+  <% else %>
+    <li class="left clearfix">
+     <span class="chat-img1 pull-left">
+        <img src="<%= get_avatar message.user.profile.avatar_url %>"
+          class="img-circle">
+     </span>
+     <div class="chat-body1 clearfix">
+        <p><%= message.content %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>

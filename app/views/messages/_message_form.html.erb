@@ -1,0 +1,10 @@
+<%= form_for :message, html: {id: "new_message"} do |f| %>
+  <div class="type-message">
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+  <%= f.hidden_field :group_id, value: group.id %>
+  <div class="btn-send">
+    <%= f.submit "send", class: "pull-right btn btn-success" %>
+  </div>
+<% end %>
