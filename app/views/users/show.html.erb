@@ -34,22 +34,24 @@
           <div class="profile-usermenu">
             <ul class="nav">
               <li>
-                <%= link_to t(".created"), "#",
-                  class: "glyphicon glyphicon-ok" %>
+                <%= link_to user_path(group_type: :created), remote: true do %>
+                  <span class="glyphicon glyphicon-ok"></span>
+                  <%= t ".created" %>
+                <% end %>
               </li>
-              <li>
-                <%= link_to t(".joined"), "#",
-                  class: "glyphicon glyphicon-flag" %>
+              <li class="active">
+                <%= link_to user_path(group_type: :joined), remote: true do %>
+                  <span class="glyphicon glyphicon-flag"></span>
+                  <%= t ".joined" %>
+                <% end %>
               </li>
             </ul>
           </div>
         <% end %>
       </div>
     </div>
-    <div class="col-md-9">
-      <div class="profile-content">
-
-      </div>
+    <div class="col-md-9 profile-content">
+     <%= render "users/groups", groups: @groups %>
     </div>
   </div>
 </div>

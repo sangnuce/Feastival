@@ -5,6 +5,14 @@ class UsersController < ApplicationController
   skip_authorize_resource only: [:show]
 
   def show
+    @groups =
+      if params[:group_type] == "joined"
+        @user.groups - @user.owned_groups
+      elsif params[:group_type] == "created"
+        @user.owned_groups
+      else
+        @user.groups
+      end
   end
 
   def edit

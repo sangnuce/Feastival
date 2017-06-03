@@ -6,6 +6,9 @@ vi:
   date:
     formats:
       date_month_year_concise: "%d-%m-%Y"
+  time:
+    formats:
+      time_info_message: "%d/%m/%Y -- %H:%M:%S"
   groups:
     index:
       new: "Tạo nhóm mới"
@@ -51,22 +54,19 @@ vi:
       title: "Feastival"
       welcome: "Nơi bạn tạo ra những bữa ăn thú vị"
       join: "Tham gia ngay!"
-
     about:
       title: "Feastival"
-
     help:
       title: "Trợ giúp"
-
     contact:
       title: "Liên hệ"
-
   layouts:
     header:
       search_location: "Tìm theo địa điểm"
       help: "Trợ giúp"
       about: "Về chúng tôi"
       contact: "Liên hệ"
+      group: "Nhóm"
   shared:
     error_messages:
       error_message: "Lỗi"
@@ -97,6 +97,12 @@ vi:
       home: "Trang chủ"
       created: "Nhóm đã tạo"
       joined: "Nhóm đã tham gia"
+    show_group:
+      time: "Thời gian: "
+      address: "Địa chỉ: "
+      size: "Số lượng: "
+      creator: "Người tạo: "
+      group_name: "Tên nhóm: "
     registrations:
       new:
         title: "Đăng ký"
