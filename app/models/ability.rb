@@ -3,7 +3,9 @@ class Ability
 
   def initialize user
     user ||= User.new
-    if user.is_admin?
+    if user.new_record?
+      can :read, [Group, User]
+    elsif user.is_admin?
       can :manage, :all
     else
       can [:create, :new], Group

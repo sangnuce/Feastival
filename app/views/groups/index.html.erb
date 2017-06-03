@@ -1,9 +1,11 @@
 <div class="container-fluid group-index">
   <div class="container">
     <div class="row">
-      <div class="group-new-btn">
-        <%= link_to t(".new"), new_group_path, class: "btn btn-primary" %>
-      </div>
+      <% if can? :create, Group %>
+        <div class="group-new-btn">
+          <%= link_to t(".new"), new_group_path, class: "btn btn-primary" %>
+        </div>
+      <% end %>
       <div id="all-group">
         <%= render @groups %>
       </div>

@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="current-user"
+      data-id="<%= current_user ? current_user.id : '' %>" />
     <title><%= yield :title %></title>
     <%= render "layouts/rails_default" %>
   </head>
   <body>
     <%= render "layouts/header" %>
-    <%= flash_messages %>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% elsif alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% else %>
+      <%= flash_messages %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

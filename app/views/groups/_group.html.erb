@@ -17,9 +17,20 @@
       <li class="list-group-item"><%= group.time %></li>
       <li class="list-group-item"><%= group.address %></li>
       <li class="list-group-item"><%=  t ".creator" %>
-        <%= group.creator.email %></li>
-      <li class="list-group-item"><%= link_to t(".join"),
-        class: "btn btn-primary" %></li>
+        <%= group.creator.profile.name %></li>
+      <li class="list-group-item">
+        <% if check_join_group group.id %>
+          <%= link_to group_path(group), class:"btn btn-primary" do %>
+            <span class="glyphicon glyphicon-info-sign"></span>
+            <%= t ".info" %>
+          <% end %>
+        <% else %>
+          <%= link_to group_path(group), class:"btn btn-primary" do %>
+            <span class="glyphicon glyphicon-comment"></span>
+            <%= t ".chat" %>
+          <% end %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </div>

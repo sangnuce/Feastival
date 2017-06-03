@@ -1,12 +1,47 @@
-<div class="container">
-  <div class="center">
-    <h2><%= @group.title %></h2>
-    <h3><%= @group.category.name %></h3>
-    <ul>
-      <li><%= @group.creator.email %></li>
-      <li><%= @group.address %></li>
-      <li><%= @group.time %></li>
-      <li><%= @group.size %></li>
-    </ul>
-  </div>
+<div class="container-fluid">
+  <% if check_join_group @group.id %>
+    <%= render "join", group: @group %>
+  <% else %>
+    <div class="row">
+      <div class="message-header">
+        <div class="col-md-3 user-menu">
+          <%= t ".users" %>
+        </div>
+        <div class="col-md-6 message-menu">
+          <%= t ".messages" %>
+        </div>
+        <div class="col-md-3 info-menu">
+          <%= t ".infomation" %>
+        </div>
+      </div>
+      <div class="message-main">
+        <div class="col-md-3 list-users">
+          <div class="row">
+            <% @group.users.each do |user| %>
+              <%= render "user", user: user, group: @group %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="chat-area">
+              <div class="panel-body" id="messages"
+                data-group-id="<%= @group.id %>">
+                <%= render @group.messages %>
+              </div>
+            </div>
+            <div class="message-write">
+              <%= render "messages/message_form", message: @message,
+                group: @group %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 info-group">
+          <div class="row">
+            <%= render "info_group", group: @group %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
