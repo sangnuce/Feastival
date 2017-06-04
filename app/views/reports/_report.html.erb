@@ -1,0 +1,19 @@
+<div class="list-group">
+  <div class="list-group-item">
+    <%= t ".reporter" %>:
+    <%= link_to report.reporter.profile.name, report.reporter %>
+  </div>
+  <div class="list-group-item">
+    <% if report.reported_type == "Group" %>
+      <%= t ".group" %>:
+      <%= link_to report.reported.title, report.reported %>
+    <% else %>
+      <%= t ".user" %>:
+      <%= link_to report.reported.profile.name, report.reported %>
+    <% end %>
+  </div>
+  <div class="list-group-item">
+    <p><%= t ".content" %>:</p>
+    <p><%= report.content %></p>
+  </div>
+</div>

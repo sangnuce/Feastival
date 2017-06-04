@@ -1,0 +1,28 @@
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          &times;</button>
+        <h4 class="modal-title"><%= t ".report_title" %></h4>
+      </div>
+      <div class="modal-body center">
+        <%= form_for report do |f| %>
+          <%= f.hidden_field :reported_type, value: report.reported_type %>
+          <%= f.hidden_field :reported_id, value: report.reported_id %>
+          <%= f.text_area :content, placeholder: t(".content"),
+            class: "form-control" %>
+          <div class="center">
+            <%= f.submit t(".report"),
+              class: "btn btn-danger btn-padded btn-lg" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <%= t ".cancel"  %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

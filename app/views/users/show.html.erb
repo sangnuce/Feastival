@@ -47,11 +47,20 @@
               </li>
             </ul>
           </div>
+        <% else %>
+          <div class="center">
+            <button type="button" class="btn btn-danger btn-lg btn-padded"
+              data-toggle="modal" data-target="#myModal">
+              <%= t ".report" %>
+          </button>
+          </div>
+          <%= render "shared/report", report: @user_supports.report %>
         <% end %>
       </div>
     </div>
     <div class="col-md-9 profile-content">
-     <%= render "users/groups", groups: @groups %>
+      <%= render "users/groups",
+        groups: @user_supports.groups(params[:group_type]) %>
     </div>
   </div>
 </div>

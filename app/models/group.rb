@@ -9,4 +9,9 @@ class Group < ApplicationRecord
   has_many :users, through: :group_users
 
   validates :address, :time, :size, :title, :category, presence: true
+
+  def owned_by? user
+    return false unless user
+    self.creator_id == user.id
+  end
 end

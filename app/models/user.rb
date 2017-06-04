@@ -10,7 +10,9 @@ class User < ApplicationRecord
   has_many :group_users, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :notifications, dependent: :destroy
-  has_many :reports, dependent: :destroy, foreign_key: :reporter_id
+  has_many :owned_reports, dependent: :destroy,
+    foreign_key: :reporter_id, class_name: Report.name
+  has_many :reports, dependent: :destroy, as: :reported
 
   accepts_nested_attributes_for :profile, update_only: true
 
