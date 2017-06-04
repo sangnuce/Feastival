@@ -120,7 +120,7 @@ $white: #fff;
 
 .type-message {
   float: left;
-  width: 560px;
+  width: 575px;
 }
 
 .list-users {
@@ -128,7 +128,7 @@ $white: #fff;
   height: 505px !important;
 }
 
-.info-group {
+.info-group-ul {
   border-left: 1px solid $gray-hover;
   height: 505px !important;
 }
@@ -167,4 +167,24 @@ $white: #fff;
   height: 40px;
   margin-top: 3px;
   width: 18%;
+}
+
+.remove-icon {
+  margin-top: 10px;
+}
+
+.title-info-bold {
+  float: left;
+  font-weight: bold;
+  width: 25%;
+}
+
+.category-info {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.button-left {
+  text-align: center;
 }

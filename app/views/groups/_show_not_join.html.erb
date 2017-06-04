@@ -1,0 +1,37 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class ="form-not_join">
+    <h2 class="titlee-not-join"><%= t ".title" %></h2>
+    <div class="col-md-6 col-md-offset-3">
+      <p class="title-not-join"><%= t ".category" %></p>
+      <p><%= group.category.name %></p>
+      <p class="title-not-join"><%= t ".group_name" %></p>
+      <p><%= group.title %></p>
+      <p class="title-not-join"><%= t ".time" %></p>
+      <p><%= l group.time, format: :time_info_message %></p>
+      <p class="title-not-join"><%= t ".address" %></p>
+      <p><%= group.address%></p>
+      <p class="title-not-join"><%= t ".size" %></p>
+      <p><%= group.size %></p>
+      <p class="title-not-join"><%= t ".creator" %></p>
+      <p><%= group.creator.profile.name %></p>
+      <p class="user-join-infoo">
+        <%= t ".user_info" %>
+      </p>
+      <div class="user-join">
+        <% group.users.each do |user| %>
+          <div class="col-md-2 user-join-info">
+            <%= image_tag user.profile.avatar_url.to_s,
+              class: "img-responsive" %>
+            <p class="name-user">
+              <%= link_to user.profile.name, user_path(user) %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+      <div class="joinn">
+        <%= render "join", group: group %>
+      </div>
+    </div>
+  </div>
+</div>

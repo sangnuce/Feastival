@@ -1,6 +1,8 @@
 <div class="col-md-6 group-profile ">
-  <%= image_tag "dinner.jpg", class: "card-img-group-profile" %>
   <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <%= image_tag "dinner.jpg", class: "card-img-group-profile" %>
+    </li>
     <li class="list-group-item group-category">
       <%= link_to group.category.name, group_path(group) %>
     </li>

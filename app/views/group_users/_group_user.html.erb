@@ -1,0 +1,23 @@
+<ul class="users" id="delete_user_<%= group_user.id %>">
+  <li>
+    <div>
+      <img src="<%= get_avatar group_user.user.profile.avatar_url %>"
+        class="img-circle avatar-message">
+    </div>
+    <div class="user-profile">
+      <%= link_to group_user.user.profile.name, user_path(group_user.user) %>
+    </div>
+    <% if group_user.user.current_user? group_user.group.creator %>
+      <div class="delete-user">
+        <span class="glyphicon glyphicon-user remove-icon"></span>
+      </div>
+    <% elsif can? :destroy, group_user %>
+      <div class="delete-user">
+        <%= link_to group_user_path(group_user), method: :delete, remote: true,
+          data: {confirm: t(".delete")} do %>
+          <span class="glyphicon glyphicon-remove remove-icon"></span>
+        <% end %>
+      </div>
+    <% end %>
+  </li>
+</ul>

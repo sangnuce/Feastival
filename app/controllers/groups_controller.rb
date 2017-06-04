@@ -1,11 +1,11 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :initialize_groups_and_categories, only: [:new, :create]
+  before_action :initialize_groups, only: [:new, :create]
+  before_action :initalize_categories, except: [:index, :show, :destory]
+  before_action :init_supports, only: [:index, :show]
   load_and_authorize_resource
-  skip_authorize_resource only: [:index, :show]
 
   def index
-    @groups = Group.all
   end
 
   def new
@@ -24,8 +24,18 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @message = Message.new
-    @group_user = @group.group_users.build
+  end
+
+  def edit
+  end
+
+  def update
+    if @group.update_attributes group_params
+      redirect_to group_path @group
+    else
+      flash[:error] = t "error_update_group"
+      render :edit
+    end
   end
 
   private
@@ -34,10 +44,17 @@ class GroupsController < ApplicationController
       :address, :longitude, :latitude
   end
 
-  def initialize_groups_and_categories
+  def initialize_groups
     @group = current_user.owned_groups.build
+  end
+
+  def initalize_categories
     @categories = Category.all.map do |category|
       [category.name, category.id]
     end
+  end
+
+  def init_supports
+    @group_supports = Supports::Group.new group: @group
   end
 end
