@@ -15,6 +15,7 @@ class Ability
       can :destroy, GroupUser do |group_user|
         user == group_user.group.creator
       end
+      can :create, Report
     end
   end
 end

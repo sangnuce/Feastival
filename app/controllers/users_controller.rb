@@ -2,17 +2,9 @@ class UsersController < ApplicationController
   before_action :load_genders, only: :edit
 
   load_and_authorize_resource
-  skip_authorize_resource only: [:show]
 
   def show
-    @groups =
-      if params[:group_type] == "joined"
-        @user.groups - @user.owned_groups
-      elsif params[:group_type] == "created"
-        @user.owned_groups
-      else
-        @user.groups
-      end
+    @user_supports = Supports::User.new user: @user
   end
 
   def edit

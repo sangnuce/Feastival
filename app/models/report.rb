@@ -3,4 +3,8 @@ class Report < ApplicationRecord
   belongs_to :reported, polymorphic: true
 
   has_many :notifications, as: :source, dependent: :destroy
+
+  validates :content, presence: true
+
+  scope :not_resolved, ->{where resolved: false}
 end

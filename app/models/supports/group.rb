@@ -1,8 +1,8 @@
 class Supports::Group
   attr_reader :group
 
-  def initialize agrs = {}
-    @group = agrs[:group]
+  def initialize args = {}
+    @group = args[:group]
   end
 
   def all
@@ -19,5 +19,13 @@ class Supports::Group
 
   def leave user
     GroupUser.find_by user_id: user.id, group_id: @group.id
+  end
+
+  def report
+    @group.reports.build
+  end
+
+  def users
+    @group.users
   end
 end

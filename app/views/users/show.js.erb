@@ -1,1 +1,2 @@
-$('.profile-content').html('<%= j render "users/groups", groups: @groups %>');
+$('.profile-content').html('<%= j render "users/groups",
+  groups: @user_supports.groups(params[:group_type]) %>');
