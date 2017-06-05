@@ -224,5 +224,5 @@ vi:
       content_report: "Nội dung báo cáo"
       created_report: "Thời gian tạo"
     report:
-      user: "Người dùng: "
-      group: "Nhóm: "
+      user: "Người dùng "
+      group: "Nhóm "

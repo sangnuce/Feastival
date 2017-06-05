@@ -1,9 +1,9 @@
-<div class="list-group report">
-  <div class="list-group-item">
-    <%= t ".reporter" %>:
-    <%= link_to report.reporter.profile.name, report.reporter %>
-  </div>
-  <div class="list-group-item">
+<tr>
+  <td>
+    <%= link_to report.reporter.profile.name, user_path(report.reporter),
+      class: "user-link" %>
+  </td>
+  <td>
     <% if report.reported_type == "Group" %>
       <%= t ".group" %>:
       <%= link_to report.reported.title, report.reported %>
@@ -11,9 +11,11 @@
       <%= t ".user" %>:
       <%= link_to report.reported.profile.name, report.reported %>
     <% end %>
-  </div>
-  <div class="list-group-item">
-    <p><%= t ".content" %>:</p>
+  </td>
+  <td>
     <p><%= report.content %></p>
-  </div>
-</div>
+  </td>
+  <td>
+    <span><%= l report.created_at, format: :time_info_message %></span>
+  </td>
+</tr>

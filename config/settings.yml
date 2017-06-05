@@ -3,3 +3,4 @@ flash_type:
   error: "alert alert-danger"
   info: "alert alert-info"
   warning: "alert alert-warning"
+per_page: 10

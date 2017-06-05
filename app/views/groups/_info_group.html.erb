@@ -8,7 +8,7 @@
   </li>
   <li>
     <p class="title-info-bold"><%= t ".time" %></p>
-    <p class="title-info"><%= I18n.localize group.time,
+    <p class="title-info"><%= l group.time,
       format: :time_info_message %></p>
   </li>
   <li>
@@ -34,13 +34,13 @@
         <%= t ".left_group" %>
       <% end %>
       <% unless group.owned_by? current_user %>
-        <button type="button" class="btn btn-danger"
-          data-toggle="modal" data-target="#myModal">
+        <%= link_to "#", class: "btn btn-danger",
+          data: {toggle: :modal, target: "#myModal"} do %>
           <span class="glyphicon glyphicon-alert"></span>
           <%= t ".report" %>
-        </button>
-        <%= render "shared/report", report: group_supports.report %>
+        <% end %>
       <% end %>
     </li>
   <% end %>
 </ul>
+<%= render "shared/report", report: group_supports.report %>

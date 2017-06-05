@@ -18,7 +18,12 @@
       <li class="list-group-item"><%=  t ".creator" %>
         <%= group.creator.profile.name %></li>
       <li class="list-group-item">
-        <% if check_join_group group.id %>
+        <% if can? :destroy, Group %>
+          <%= link_to group_path(group), class:"btn btn-danger" do %>
+            <span class="glyphicon glyphicon-remove-sign"></span>
+            <%= t ".delete" %>
+          <% end %>
+        <% elsif check_join_group group.id %>
           <%= link_to group_path(group), class:"btn btn-primary" do %>
             <span class="glyphicon glyphicon-info-sign"></span>
             <%= t ".info" %>

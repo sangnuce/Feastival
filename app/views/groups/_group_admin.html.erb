@@ -1,0 +1,32 @@
+<tr id="delete_group_<%= group.id %>">
+  <td>
+    <%= group.category.name %>
+  </td>
+  <td>
+    <span><%= group.title %></span>
+  </td>
+  <td>
+    <span><%= group.address %></span>
+  </td>
+   <td>
+    <span><%= l group.time, format: :time_info_message %></span>
+  </td>
+  <td>
+    <span><%= group.creator.profile.name %></span>
+  </td>
+  <td class="text-center">
+    <%= link_to group_path(group) do %>
+      <span class="fa-stack">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+      </span>
+    <% end %>
+    <%= link_to group_path(group), method: :delete, remote: true,
+      data: {confirm: t(".delete")} do %>
+      <span class="fa-stack">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+      </span>
+    <% end %>
+  </td>
+</tr>

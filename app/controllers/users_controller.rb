@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 
   load_and_authorize_resource
 
+  def index
+    @users = User.not_admin.page(params[:page]).per Settings.per_page
+  end
+
   def show
     @user_supports = Supports::User.new user: @user
   end
@@ -19,8 +23,15 @@ class UsersController < ApplicationController
     end
   end
 
-  private
+  def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html{redirect_to users_path}
+      format.js
+    end
+  end
 
+  private
   def user_params
     params.require(:user).permit profile_attributes: [:name, :birthday,
       :gender, :address, :job, :phonenumber, :avatar, :description]

@@ -14,7 +14,7 @@
           <%= t ".gender" %><%= t "genders.#{@user.profile.gender}" %>
         </div>
         <div class="profile-usertitle-main">
-          <%= t ".birthday" %><%= I18n.localize @user.profile.birthday,
+          <%= t ".birthday" %><%= l @user.profile.birthday,
             format: :date_month_year_concise %>
         </div>
         <div class="profile-usertitle-main">
