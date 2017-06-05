@@ -1,0 +1,40 @@
+<div class="modal fade" id="Modal-Create-Group" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="row">
+        <h2 class="titlee-not-join"><%= t ".title" %></h2>
+        <div class="col-md-8 col-md-offset-2">
+          <%= form_for group do |f| %>
+            <%= render "shared/error_messages", object: f.object %>
+
+            <%= f.label t(".category"), class: "label-create-group" %>
+            <%= f.select :category_id, categories, {}, {class: "form-control"} %>
+
+            <%= f.label t(".title"), class: "label-create-group" %>
+            <%= f.text_field :title, class: "form-control" %>
+
+            <%= f.label t(".time"), class: "label-create-group" %>
+            <%= f.datetime_field :time, class: "form-control" %>
+
+            <%= f.label t(".address"), class: "label-create-group" %>
+            <%= f.text_field :address, class: "place-input form-control" %>
+            <%= f.hidden_field :latitude, class: "latitude" %>
+            <%= f.hidden_field :longitude, class: "longitude" %>
+
+            <%= f.label t(".size"), class: "label-create-group" %>
+            <%= f.number_field :size, class: "form-control" %>
+
+            <% if !f.object.new_record? %>
+              <%= f.label t(".status"), class: "label-create-group" %>
+              <%= f.select :status, options_for_select(select_statuses,
+                f.object.status), {}, {class: "form-control"} %>
+            <% end %>
+
+            <%= f.submit yield(:button_text),
+              class: "btn btn-primary btn-group" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

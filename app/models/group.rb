@@ -1,4 +1,6 @@
 class Group < ApplicationRecord
+  enum status: [:fail, :success]
+
   belongs_to :creator, class_name: User.name
   belongs_to :category
 
@@ -13,6 +15,14 @@ class Group < ApplicationRecord
   def owned_by? user
     return false unless user
     self.creator_id == user.id
+  end
+
+  class << self
+    def status_attributes_for_select
+      statuses.map do |status, _|
+        [I18n.t("statuses.#{status}"), status]
+      end
+    end
   end
 
   scope :odered_by_time, ->{order time: :desc}

@@ -4,6 +4,7 @@ vi:
   error_update_profile: "Xảy ra lỗi khi cập nhật profile"
   notfound_user: "Không tìm thấy người dùng"
   error_update_group: "Bạn chưa cập nhật được thông tin nhóm"
+  full_create_group: "Bạn đã tạo hết số lượng nhóm cho phép"
   date:
     formats:
       date_month_year_concise: "%d-%m-%Y"
@@ -15,6 +16,9 @@ vi:
     index:
       new: "Tạo nhóm mới"
       title: "Nhóm"
+      button_text: "Tạo nhóm"
+      danger: "Cảnh báo!"
+      message: "Bạn đã hết lượt tạo nhóm trong ngày hôm nay :(("
     new:
       title: "Tạo nhóm mới"
       button_text: "Tạo nhóm mới"
@@ -30,12 +34,6 @@ vi:
       chat: "Gửi tin nhắn"
       info: "Thông tin"
       delete: "Xóa nhóm"
-    group_form:
-      category: "Chọn thể loại ăn"
-      title: "Tên nhóm"
-      time: "Thời gian"
-      address: "Địa chỉ"
-      size: "Số lượng người tham gia"
     create:
       created: "Tạo nhóm thành công"
       not_created: "Không tạo được nhóm"
@@ -55,18 +53,10 @@ vi:
       messages: "Tin nhắn"
       infomation: "Thông tin"
       title: "Tin nhắn"
+      button_text: "Cập nhật"
     user:
       delete_user: "Xóa"
       delete: "Bạn có muốn xóa người dùng này không?"
-    show_not_join:
-      title: "Thông tin nhóm"
-      category: "Thể loại: "
-      group_name: "Tên nhóm: "
-      time: "Thời gian: "
-      address: "Địa chỉ: "
-      size: "Số lượng: "
-      creator: "Người tạo: "
-      user_info: "Thành viên"
     show_index_admin:
       group_category: "Thể loại"
       group_name: "Tên nhóm"
@@ -79,6 +69,9 @@ vi:
     male: Nam
     female: Nữ
     other: Khác
+  statuses:
+    fail: "Không thành công"
+    success: "Thành công"
   pages:
     home:
       title: "Feastival"
@@ -98,6 +91,13 @@ vi:
       contact: "Liên hệ"
       group: "Nhóm"
   shared:
+    modal_group_form:
+      category: "Chọn thể loại ăn"
+      title: "Thông tin nhóm"
+      time: "Thời gian"
+      address: "Địa chỉ"
+      size: "Số lượng người tham gia"
+      status: "Trạng thái nhóm đi ăn"
     error_messages:
       error_message: "Lỗi"
       contain_form: "Biễu mẫu có "
@@ -106,6 +106,15 @@ vi:
       report: "Báo xấu"
       cancel: "Hủy"
       report_title: "Hãy cho biết lý do bạn báo xấu"
+    modal_info_group:
+      title: "Thông tin nhóm"
+      category: "Thể loại: "
+      group_name: "Tên nhóm: "
+      time: "Thời gian: "
+      address: "Địa chỉ: "
+      size: "Số lượng: "
+      creator: "Người tạo: "
+      user_info: "Thành viên"
   devise:
     sessions:
       new:

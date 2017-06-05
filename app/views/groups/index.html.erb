@@ -1,4 +1,5 @@
 <% provide :title, t(".title") %>
+<% provide :button_text, t(".button_text") %>
 <% if user_signed_in? %>
   <% if current_user.is_admin %>
     <%= render "show_index_admin", groups: @groups %>
@@ -8,8 +9,18 @@
         <div class="row">
           <% if can? :create, Group %>
             <div class="group-new-btn">
-              <%= link_to t(".new"), new_group_path,
-                class: "btn btn-primary btn-text" %>
+              <% if count_user_create_group == 0 %>
+                <%= link_to t(".new"), new_group_path,
+                  class: "btn btn-primary btn-text",
+                  data: {toggle: :modal, target: "#Modal-Create-Group"} %>
+                <%= render "shared/modal_group_form",
+                  group: @group_supports.group_new, categories: @categories %>
+              <% else %>
+                <div class="alert alert-danger">
+                  <strong><%= t ".danger" %></strong>
+                  <%= t ".message" %>
+                </div>
+              <% end %>
             </div>
           <% end %>
           <div id="all-group">
