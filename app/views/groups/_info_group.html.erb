@@ -33,9 +33,13 @@
         <span class="glyphicon glyphicon-circle-arrow-right"></span>
         <%= t ".left_group" %>
       <% end %>
-      <%= link_to "#", class:"btn btn-danger" do %>
-        <span class="glyphicon glyphicon-alert"></span>
-        <%= t ".report" %>
+      <% unless @group.owned_by? current_user %>
+        <button type="button" class="btn btn-danger"
+          data-toggle="modal" data-target="#myModal">
+          <span class="glyphicon glyphicon-alert"></span>
+          <%= t ".report" %>
+        </button>
+        <%= render "shared/report", report: @group_supports.report %>
       <% end %>
     </li>
   <% end %>

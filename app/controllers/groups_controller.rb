@@ -1,10 +1,10 @@
 class GroupsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :authenticate_user!, only: [:new, :create]
   before_action :initialize_groups, only: [:new, :create]
   before_action :initalize_categories, except: [:index, :show, :destory]
   before_action :init_supports, only: [:index, :show]
-
-  load_and_authorize_resource
 
   def index
   end

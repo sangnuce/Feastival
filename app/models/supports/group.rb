@@ -5,8 +5,8 @@ class Supports::Group
     @group = args[:group]
   end
 
-  def all
-    Group.all
+  def all_groups
+    @groups = Group.all
   end
 
   def message
