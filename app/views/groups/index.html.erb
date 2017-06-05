@@ -4,11 +4,11 @@
     <div class="row">
       <% if can? :create, Group %>
         <div class="group-new-btn">
-          <%= link_to t(".new"), new_group_path, class: "btn btn-primary" %>
+          <%= link_to t(".new"), new_group_path, class: "btn btn-primary btn-text" %>
         </div>
       <% end %>
       <div id="all-group">
-        <%= render @groups %>
+        <%= render @group_supports.all_groups %>
       </div>
     </div>
   </div>

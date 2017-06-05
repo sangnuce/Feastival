@@ -88,6 +88,11 @@ vi:
     error_messages:
       error_message: "Lỗi"
       contain_form: "Biễu mẫu có "
+    report:
+      content: "Nhập nội dung"
+      report: "Báo xấu"
+      cancel: "Hủy"
+      report_title: "Hãy cho biết lý do bạn báo xấu"
   devise:
     sessions:
       new:
@@ -120,6 +125,7 @@ vi:
       size: "Số lượng: "
       creator: "Người tạo: "
       group_name: "Tên nhóm: "
+      report: "Báo xấu"
     registrations:
       new:
         title: "Đăng ký"
@@ -182,3 +188,7 @@ vi:
   messages:
     message_form:
       send: "Gửi"
+  reports:
+    create:
+      created: "Chúng tôi sẽ ghi nhận đóng góp của bạn"
+      not_created: "Phải nhập nội dung báo xấu"

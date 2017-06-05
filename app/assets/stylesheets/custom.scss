@@ -8,14 +8,16 @@ $white: #fff;
 //global
 
 body {
-  padding-top: 100px;
+  font-family: helvetica;
+  padding-top: 70px;
+}
+
+.center {
+  text-align: center;
 }
 
 // home page
 
-body {
-  padding-top: 100px;
-}
 
 .main {
   background-image: image-url('dinner.jpg');
@@ -57,16 +59,19 @@ body {
   }
 }
 
-// header
+// navbar
+.my-nav{
+  background-color: $white;
+}
 
-header {
-  margin: 0 100px;
-  margin-bottom: 100px;
+.carrot-color {
+  color: $carrot-orange;
+}
 
-  .search {
-    display: inline;
+.navbar {
+  .search-form {
+    width: 100%;
   }
-
   ul {
     list-style-type: none;
 
