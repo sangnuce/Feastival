@@ -14,4 +14,6 @@ class Group < ApplicationRecord
     return false unless user
     self.creator_id == user.id
   end
+
+  scope :odered_by_time, ->{order time: :desc}
 end

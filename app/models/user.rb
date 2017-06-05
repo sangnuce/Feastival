@@ -19,4 +19,6 @@ class User < ApplicationRecord
   def current_user? user
     user == self
   end
+
+  scope :not_admin, ->{where is_admin: false}
 end

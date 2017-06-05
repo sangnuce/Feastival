@@ -5,11 +5,11 @@ class Supports::User
     @user = args[:user]
   end
 
-  def groups params
+  def groups args
     @groups =
-      if params == "joined"
+      if args == "joined"
         @user.groups - @user.owned_groups
-      elsif params == "created"
+      elsif args == "created"
         @user.owned_groups
       else
         @user.groups

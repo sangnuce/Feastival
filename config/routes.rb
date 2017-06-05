@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     delete "/logout", to: "devise/sessions#destroy"
   end
 
-  resources :groups, except: :destroy
-  resources :users, except: [:index, :destroy]
+  resources :groups
+  resources :users
   resources :group_users, only: [:create, :destroy]
   resources :reports, only: [:create, :index]
 end

@@ -4,6 +4,11 @@
 $gray: #bbb;
 $black: #000;
 $white: #fff;
+$white-e: #eee;
+$white-e7: #e7ebee;
+$gray-c: #ccc;
+$red-e7: #e74c3c;
+$blue-34: #3498db;
 
 //Signup
 .main-form {
@@ -137,4 +142,47 @@ $white: #fff;
   font-weight: bold;
   float: left;
   width: 20%;
+}
+
+//Admin
+
+.main-box.no-header {
+  padding-top: 20px;
+}
+
+.main-box {
+  background: $white;
+}
+
+.label {
+  border-radius: 3px;
+  font-size: .875em;
+  font-weight: 600;
+}
+
+.user-list tbody td>img {
+  float: left;
+  margin-right: 15px;
+  max-width: 50px;
+  position: relative;
+}
+
+.table tbody tr td:first-child {
+  font-size: 1.125em;
+  font-weight: 300;
+}
+
+.table tbody tr td {
+  border-top: 1px solid $white-e7;
+  font-size: .875em;
+  padding: 12px 8px;
+  vertical-align: middle;
+}
+
+.btn-modal {
+  width: 70px;
+}
+
+.delete-user-modal {
+  text-align: center;
 }
