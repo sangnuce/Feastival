@@ -4,7 +4,13 @@
     <div class="main-wrapper">
       <%= image_tag "logo.png", class: "main-logo" %>
       <h1><%= t ".welcome" %></h1>
-      <%= link_to t(".join"), login_path, class: "btn btn-danger main-button" %>
+      <% if user_signed_in? %>
+        <%= link_to t(".join"), groups_path,
+          class: "btn btn-danger main-button" %>
+      <% else %>
+        <%= link_to t(".join"), login_path,
+          class: "btn btn-danger main-button" %>
+      <% end %>
     </div>
   </div>
 </div>

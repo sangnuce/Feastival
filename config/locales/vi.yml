@@ -10,6 +10,7 @@ vi:
   time:
     formats:
       time_info_message: "%d/%m/%Y -- %H:%M:%S"
+      date_created_at: "%d-%m-%Y"
   groups:
     index:
       new: "Tạo nhóm mới"
@@ -28,6 +29,7 @@ vi:
       creator: "Người tạo: "
       chat: "Gửi tin nhắn"
       info: "Thông tin"
+      delete: "Xóa nhóm"
     group_form:
       category: "Chọn thể loại ăn"
       title: "Tên nhóm"
@@ -53,6 +55,9 @@ vi:
       messages: "Tin nhắn"
       infomation: "Thông tin"
       title: "Tin nhắn"
+    user:
+      delete_user: "Xóa"
+      delete: "Bạn có muốn xóa người dùng này không?"
     show_not_join:
       title: "Thông tin nhóm"
       category: "Thể loại: "
@@ -62,6 +67,14 @@ vi:
       size: "Số lượng: "
       creator: "Người tạo: "
       user_info: "Thành viên"
+    show_index_admin:
+      group_category: "Thể loại"
+      group_name: "Tên nhóm"
+      group_address: "Địa chỉ"
+      group_creator: "Người tạo"
+      group_time: "Thời gian"
+    group_admin:
+      delete: "Bạn có muốn xóa nhóm này không?"
   genders:
     male: Nam
     female: Nữ
@@ -142,6 +155,18 @@ vi:
         btn_confirm: "Nhập lại mật khẩu"
         btn_password: "Mật khẩu"
         email: "Email"
+    user:
+      delete: "Bạn có muốn xóa tài khoản này không?"
+    modal_user:
+      title-modal-delete-user: "Bạn có muốn khóa tài khoản này không?"
+      asw-yes: "Có"
+      asw-no: "Không"
+    index:
+      user: "Người dùng"
+      created: "Ngày tạo"
+      status: "Trạng thái"
+      email: "Email"
+      title: "Người dùng"
   group_users:
     create:
       created_group_user: "Bạn đã tham gia nhóm thành công"
@@ -192,3 +217,12 @@ vi:
     create:
       created: "Chúng tôi sẽ ghi nhận đóng góp của bạn"
       not_created: "Phải nhập nội dung báo xấu"
+    index:
+      title: "Báo cáo"
+      user_report: "Người báo cáo"
+      object_report: "Đối tượng bị báo cáo"
+      content_report: "Nội dung báo cáo"
+      created_report: "Thời gian tạo"
+    report:
+      user: "Người dùng: "
+      group: "Nhóm: "

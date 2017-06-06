@@ -1,3 +1,5 @@
+var google;
+window.onload = initAutocomplete();
 function initAutocomplete() {
   var input = $('.place-input')[0];
   var autocomplete = new google.maps.places.Autocomplete(input);

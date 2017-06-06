@@ -60,7 +60,7 @@ body {
 }
 
 // navbar
-.my-nav{
+.my-nav {
   background-color: $white;
 }
 
@@ -72,6 +72,7 @@ body {
   .search-form {
     width: 100%;
   }
+
   ul {
     list-style-type: none;
 
@@ -90,4 +91,8 @@ body {
     padding-top: 9px;
     text-transform: uppercase;
   }
+}
+
+.pagination {
+  padding-left: 40% !important;
 }

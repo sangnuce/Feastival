@@ -17,12 +17,15 @@ gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
 gem "jquery-rails"
 gem "i18n-js"
 gem "kaminari"
+gem "bootstrap-kaminari-views"
 gem "carrierwave"
 gem "devise"
 gem "config"
 gem "mini_magick"
 gem "cancancan"
 gem "redis"
+gem "faker"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
