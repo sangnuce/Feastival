@@ -26,6 +26,7 @@ gem "cancancan"
 gem "redis"
 gem "faker"
 gem "font-awesome-rails"
+gem "fusioncharts-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

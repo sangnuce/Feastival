@@ -18,5 +18,8 @@
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
+//= require fusioncharts/fusioncharts
+//= require fusioncharts/fusioncharts.charts
+//= require fusioncharts/themes/fusioncharts.theme.fint
 //= require_tree ./channels
 //= require_tree .

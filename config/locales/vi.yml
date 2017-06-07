@@ -5,6 +5,15 @@ vi:
   notfound_user: "Không tìm thấy người dùng"
   error_update_group: "Bạn chưa cập nhật được thông tin nhóm"
   full_create_group: "Bạn đã tạo hết số lượng nhóm cho phép"
+  number_user_created: "Biểu đồ người dụng mới"
+  month: "Tháng"
+  count: "Số lượng"
+  number_of_user: "Số lượng người dùng"
+  number_of_group: "Số lượng nhóm"
+  number_group_created: "Biểu đồ số nhóm mới"
+  number_group_ratio: "Biểu đồ tỉ lệ nhóm đi ăn thành công"
+  number_of_group_success: "Thành công: "
+  number_of_group_fail: "Không thành công: "
   date:
     formats:
       date_month_year_concise: "%d-%m-%Y"
@@ -90,6 +99,11 @@ vi:
       about: "Về chúng tôi"
       contact: "Liên hệ"
       group: "Nhóm"
+      list_users: "Danh sách người dùng"
+      chart_users: "Biểu đồ người dùng mới"
+      list_groups: "Danh sách nhóm"
+      chart_groups: "Biểu đồ nhóm mới  "
+      chart_groups_ratio: "Biểu đồ tỉ lệ nhóm"
   shared:
     modal_group_form:
       category: "Chọn thể loại ăn"
