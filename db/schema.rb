@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170603054058) do
+ActiveRecord::Schema.define(version: 20170606035913) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170603054058) do
     t.float    "latitude"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "status",      default: 0
     t.index ["creator_id"], name: "index_groups_on_creator_id"
   end
 

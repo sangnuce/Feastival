@@ -3,8 +3,9 @@ class GroupsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create]
   before_action :initialize_groups, only: [:new, :create]
-  before_action :initalize_categories, except: [:index, :show, :destory]
+  before_action :initalize_categories, except: :destory
   before_action :init_supports, only: [:index, :show]
+  before_action :load_status, only: :show
 
   def index
     @groups = Group.odered_by_time.page(params[:page]).per Settings.per_page
@@ -51,7 +52,7 @@ class GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit :title, :category_id, :time, :size,
-      :address, :longitude, :latitude
+      :address, :longitude, :latitude, :status
   end
 
   def initialize_groups
@@ -62,6 +63,10 @@ class GroupsController < ApplicationController
     @categories = Category.all.map do |category|
       [category.name, category.id]
     end
+  end
+
+  def load_status
+    @select_statuses = Group.status_attributes_for_select
   end
 
   def init_supports

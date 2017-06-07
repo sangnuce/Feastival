@@ -5,6 +5,10 @@ class Supports::Group
     @group = args[:group]
   end
 
+  def group_new
+    Group.new
+  end
+
   def all_groups
     @groups = Group.all
   end
@@ -13,8 +17,8 @@ class Supports::Group
     Message.new
   end
 
-  def group_user
-    @group.group_users.build
+  def group_user arg
+    arg.group_users.build
   end
 
   def leave user

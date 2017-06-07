@@ -21,7 +21,8 @@
   </li>
   <% if current_user.current_user? group.creator %>
     <li class="button-left">
-      <%= link_to edit_group_path(group), class:"btn btn-primary" do %>
+      <%= link_to edit_group_path(group), class:"btn btn-primary",
+        data: {toggle: :modal, target: "#Modal-Create-Group"} do %>
         <span class="glyphicon glyphicon-edit"></span>
         <%= t ".edit" %>
       <% end %>
@@ -44,3 +45,5 @@
   <% end %>
 </ul>
 <%= render "shared/report", report: group_supports.report %>
+<%= render "shared/modal_group_form", group: group,
+  categories: @categories, select_statuses: @select_statuses %>
