@@ -1,0 +1,39 @@
+<div class="container bootstrap snippet">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="main-box no-header clearfix">
+        <div class="main-box-body clearfix">
+          <div class="table-responsive">
+            <table class="table user-list">
+              <thead>
+                <tr>
+                  <th class="text-center-admin">
+                    <span><%= t ".group_category" %></span>
+                  </th>
+                  <th class="text-center-admin">
+                    <span><%= t ".group_name" %></span>
+                  </th>
+                  <th class="text-center-admin">
+                    <span><%= t ".group_address" %></span>
+                  </th>
+                  <th class="text-center-admin">
+                    <span><%= t ".group_time" %></span>
+                  </th>
+                  <th class="text-center-admin">
+                    <span><%= t ".group_creator" %></span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% groups.each do |group|%>
+                  <%= render "group_admin", group: group %>
+                <% end %>
+              </tbody>
+            </table>
+            <%= paginate groups, theme: "twitter-bootstrap-3" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

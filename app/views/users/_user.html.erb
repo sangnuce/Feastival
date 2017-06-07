@@ -1,0 +1,27 @@
+<tr id="delete_user_<%= user.id %>">
+  <td>
+    <%= image_tag get_avatar(user.profile.avatar_url),
+      class: "img-responsive" %>
+    <%= link_to user.profile.name, user_path(user), class: "user-link" %>
+  </td>
+  <td class="text-center">
+    <%= l user.created_at, format: :date_created_at %>
+  </td>
+  <td class="text-center">
+    <% if user.activated %>
+      <span class="label label-success"><%= t ".active" %></span>
+    <% else %>
+      <span class="label label-danger"><%= t ".inactive" %></span>
+    <% end %>
+  </td>
+  <td class="text-center"><%= user.email %></td>
+  <td class="text-center">
+    <%= link_to user_path(user), method: :delete, remote: true,
+      data: {confirm: t(".delete")} do %>
+      <span class="fa-stack">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+      </span>
+    <% end %>
+  </td>
+</tr>

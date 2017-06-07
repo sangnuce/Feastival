@@ -8,22 +8,14 @@
             <table class="table user-list">
               <thead>
                 <tr>
-                <th>
-                  <span><%= t ".user_report" %></span>
-                </th>
-                <th>
-                  <span><%= t ".object_report" %></span>
-                </th>
-                <th>
-                  <span><%= t ".content_report" %></span>
-                </th>
-                <th>
-                  <span><%= t ".created_report" %></span>
-                </th>
+                <th class="text-center"><span><%= t ".user" %></span></th>
+                <th class="text-center"><span><%= t ".created" %></span></th>
+                <th class="text-center"><span><%= t ".status" %></span></th>
+                <th class="text-center"><span><%= t ".email" %></span></th>
                 </tr>
               </thead>
               <tbody>
-                <%= render @reports %>
+                <%= render @users %>
               </tbody>
             </table>
           </div>
@@ -32,4 +24,4 @@
     </div>
   </div>
 </div>
-<%= paginate @reports, theme: "twitter-bootstrap-3" %>
+<%= paginate @users, theme: "twitter-bootstrap-3" %>

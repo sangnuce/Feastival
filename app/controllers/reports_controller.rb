@@ -2,6 +2,7 @@ class ReportsController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @reports = Report.odered_by_time.page(params[:page]).per Settings.per_page
   end
 
   def create

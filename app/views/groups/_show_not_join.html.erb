@@ -21,7 +21,7 @@
       <div class="user-join">
         <% group.users.each do |user| %>
           <div class="col-md-2 user-join-info">
-            <%= image_tag user.profile.avatar_url.to_s,
+            <%= image_tag get_avatar(user.profile.avatar_url),
               class: "img-responsive" %>
             <p class="name-user">
               <%= link_to user.profile.name, user_path(user) %>
@@ -29,9 +29,13 @@
           </div>
         <% end %>
       </div>
-      <div class="joinn">
-        <%= render "join", group: group_user_build %>
-      </div>
+      <% if user_signed_in? %>
+        <% unless current_user.is_admin %>
+          <div class="joinn">
+            <%= render "join", group_user: group_user_build %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

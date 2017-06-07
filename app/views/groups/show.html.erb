@@ -38,11 +38,12 @@
         </div>
         <div class="col-md-3 info-group">
           <div class="row">
-            <%= render "info_group",
-              group_supports: @group_supports.group_user %>
+            <%= render "info_group", group: @group,
+              group_supports: @group_supports %>
           </div>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+<%= render "shared/report", report: @group_supports.report %>

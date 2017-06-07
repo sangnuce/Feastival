@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
   before_action :init_supports, only: [:index, :show]
 
   def index
+    @groups = Group.odered_by_time.page(params[:page]).per Settings.per_page
   end
 
   def new
@@ -36,6 +37,14 @@ class GroupsController < ApplicationController
     else
       flash[:error] = t "error_update_group"
       render :edit
+    end
+  end
+
+  def destroy
+    @group.destroy
+    respond_to do |format|
+      format.html{redirect_to groups_path}
+      format.js
     end
   end
 
