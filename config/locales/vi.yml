@@ -26,8 +26,6 @@ vi:
       new: "Tạo nhóm mới"
       title: "Nhóm"
       button_text: "Tạo nhóm"
-      danger: "Cảnh báo!"
-      message: "Bạn đã hết lượt tạo nhóm trong ngày hôm nay :(("
     new:
       title: "Tạo nhóm mới"
       button_text: "Tạo nhóm mới"
@@ -35,19 +33,21 @@ vi:
       title: "Sửa thông tin nhóm"
       button_text: "Cập nhật"
     group:
-      nearby: "Cách đây"
+      nearby: "Cách đây: "
       km: "km"
       size: "Số lượng: "
       join: "Tham gia"
-      creator: "Người tạo: "
       chat: "Gửi tin nhắn"
       info: "Thông tin"
-      delete: "Xóa nhóm"
+      time: "Thời gian: "
+      address: "Địa chỉ: "
     create:
       created: "Tạo nhóm thành công"
       not_created: "Không tạo được nhóm"
     join:
       join_group: "Tham gia"
+      danger: "Cảnh báo!"
+      message: "Bạn không thể tham gia nhóm này :(("
     info_group:
       time: "Thời gian: "
       address: "Địa điểm: "
@@ -129,6 +129,9 @@ vi:
       size: "Số lượng: "
       creator: "Người tạo: "
       user_info: "Thành viên"
+    modal_error_join_group:
+      danger: "Cảnh báo!"
+      message: "Bạn đã hết lượt tạo nhóm trong ngày hôm nay :(("
   devise:
     sessions:
       new:

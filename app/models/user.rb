@@ -8,6 +8,7 @@ class User < ApplicationRecord
     class_name: Group.name, dependent: :destroy
   has_many :groups, through: :group_users
   has_many :group_users, dependent: :destroy
+  has_many :leave_groups, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :owned_reports, dependent: :destroy,

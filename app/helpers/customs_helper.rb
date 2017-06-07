@@ -1,5 +1,5 @@
 module CustomsHelper
-  def get_avatar url_avatar
+  def user_avatar url_avatar
     if url_avatar.blank?
       "avatar.jpg"
     else

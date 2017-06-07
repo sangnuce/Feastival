@@ -1,7 +1,7 @@
 <ul class="users" id="delete_user_<%= group_user.id %>">
   <li>
     <div>
-      <%= image_tag get_avatar(group_user.user.profile.avatar_url),
+      <%= image_tag user_avatar(group_user.user.profile.avatar_url),
         class: "img-circle avatar-message" %>
     </div>
     <div class="user-profile">

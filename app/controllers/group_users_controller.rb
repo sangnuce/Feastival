@@ -16,6 +16,7 @@ class GroupUsersController < ApplicationController
     @group_user = GroupUser.find_by id: params[:id]
     if @group_user.present?
       @group_user.destroy
+      @group_user.group.leave_groups.create user: @group_user.user
       respond_to do |format|
         format.html{redirect_to groups_path}
         format.js

@@ -4,6 +4,7 @@
 
 $carrot-orange: #d65e40;
 $white: #fff;
+$red-header-danger: #d9534f;
 
 //global
 
@@ -111,4 +112,22 @@ body {
 
 .pac-container {
   z-index: 1000000;
+}
+
+.modal-header-danger {
+  background-color: $red-header-danger;
+  border-bottom: 1px solid $white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: $white;
+  padding: 9px 15px;
+}
+
+.btn-leave-group {
+  margin-bottom: 10px !important;
+}
+
+.image-group {
+  margin-left: 30%;
+  width: 40% !important;
 }
