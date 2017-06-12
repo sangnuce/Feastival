@@ -1,7 +1,11 @@
-<% provide :title, t(".title") %>
-<% provide :button_text, t(".button_text") %>
 <div class="container-fluid">
-  <% unless check_join_group @group.id %>
+  <% if check_join_group @group.id %>
+    <% provide :title, t(".title_show") %>
+    <%= render "show_not_join", group: @group,
+      group_user_build: @group_supports.group_user(@group)%>
+  <% else %>
+    <% provide :title, t(".title") %>
+    <% provide :button_text, t(".button_text") %>
     <div class="row">
       <div class="message-header">
         <div class="col-md-3 user-menu">

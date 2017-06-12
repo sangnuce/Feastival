@@ -1,14 +1,19 @@
 $dark-grey: #888;
+$light-grey: #e0e2e5;
+$light-blue: #48b5e9;
+$white: #fff;
 
 .group-card {
-  border-left: solid 2px;
-  border-radius: 3%;
-  border-top: solid 2px;
-  box-shadow: 10px 10px 5px $dark-grey;
-  height: 505px;
-  margin-bottom: 30px;
-  margin-top: 20px;
-  padding: 10px;
+  border: 2px solid $light-grey;
+  border-radius: 15px;
+  height: 100px;
+  margin: 10px;
+}
+
+.map-index {
+  height: 88vh;
+  max-width: 100%;
+  position: fixed;
 }
 
 .group-show {
@@ -65,4 +70,115 @@ ul {
 
 .join {
   text-align: center;
+}
+
+.group-detail {
+  height: 80px;
+  margin-top: 0;
+}
+
+.creator-avatar {
+  border-radius: 50%;
+  height: 80px;
+  left: 10px;
+  position: relative;
+  top: 10px;
+  width: 80px;
+}
+
+.nearby {
+  float: right;
+}
+
+.info-window {
+  font-size: 1.1em;
+  height: 300px;
+
+  .info-avatar-container {
+    border-bottom: solid 1px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .info-avatar {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  }
+
+  .title {
+    border-bottom: solid 1px;
+    text-align: center;
+  }
+}
+
+.map-container {
+  position: fixed !important;
+  top: 100px !important;
+  right: 0 !important;
+
+  .map-canvas {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.side-btn {
+  background-color: $white;
+  box-shadow: 0 0 0 3px $light-grey;
+  cursor: pointer;
+  font-size: 30px;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 170px;
+  width: 50px;
+}
+
+.sidenav {
+  background-color: $white;
+  box-shadow: 0 0 0 5px $light-grey;
+  height: 83vh;
+  overflow-x: hidden;
+  position: fixed;
+  right: 0;
+  top: 170px;
+  transition: .5s;
+  width: 0;
+  z-index: 1;
+
+  .custom-nearby {
+    margin-top: 100px;
+  }
+
+  .nearby-slider {
+    height: 50px;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .small {
+    height: 40px;
+  }
+}
+
+.sidenav a {
+  display: block;
+  font-size: 25px;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.sidenav .closebtn {
+  font-size: 36px;
+  margin-left: 50px;
+  position: absolute;
+  right: 25px;
+  top: 0;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }

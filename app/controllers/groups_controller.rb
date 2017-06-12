@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
       redirect_to @group
     else
       flash[:error] = t ".not_created"
-      render :new
+      render "shared/modal_group_form"
     end
   end
 

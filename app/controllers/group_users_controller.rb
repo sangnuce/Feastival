@@ -15,8 +15,7 @@ class GroupUsersController < ApplicationController
   def destroy
     @group_user = GroupUser.find_by id: params[:id]
     if @group_user.present?
-      @group_user.destroy
-      @group_user.group.leave_groups.create user: @group_user.user
+      @group_user.left_group
       respond_to do |format|
         format.html{redirect_to groups_path}
         format.js

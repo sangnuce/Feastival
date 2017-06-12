@@ -19,13 +19,20 @@ vi:
       date_month_year_concise: "%d-%m-%Y"
   time:
     formats:
+      time_info_group: "%H:%M ngày %d tháng năm %y"
       time_info_message: "%d/%m/%Y -- %H:%M:%S"
       date_created_at: "%d-%m-%Y"
   groups:
     index:
+      nearby: "Nhóm gần vị trí của bạn"
       new: "Tạo nhóm mới"
       title: "Nhóm"
       button_text: "Tạo nhóm"
+      custom_nearby: "Tự chọn địa điểm"
+      my_marker: "Vị trí của bạn"
+      group_marker: "Vị trí nhóm"
+      slider_help: "Kéo hoặc nhập để tùy chỉnh phạm vi tìm kiếm nhóm xung quanh (đơn vị: km)"
+      input_help: "Nhập để đặt địa điểm xuất phát khác nơi của bạn"
     new:
       title: "Tạo nhóm mới"
       button_text: "Tạo nhóm mới"
@@ -33,7 +40,10 @@ vi:
       title: "Sửa thông tin nhóm"
       button_text: "Cập nhật"
     group:
-      nearby: "Cách đây: "
+      category: "Đặc điểm: "
+      time: "Thời gian: "
+      address: "Địa chỉ: "
+      nearby: "Cách đây "
       km: "km"
       size: "Số lượng: "
       join: "Tham gia"
@@ -63,6 +73,7 @@ vi:
       infomation: "Thông tin"
       title: "Tin nhắn"
       button_text: "Cập nhật"
+      title_show: "Thông tin nhóm"
     user:
       delete_user: "Xóa"
       delete: "Bạn có muốn xóa người dùng này không?"
@@ -252,3 +263,12 @@ vi:
     report:
       user: "Người dùng "
       group: "Nhóm "
+en:
+  marker_here: "Bạn đang ở đây"
+  group:
+    direction_error: "Không thể tìm thấy đường đi: "
+    info: "Thông tin"
+    time: "Thời gian: "
+    address: "Địa chỉ: "
+    count:  "Số lượng: "
+

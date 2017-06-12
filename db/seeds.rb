@@ -6,10 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create name: "An trua"
-Category.create name: "An toi"
-Category.create name: "An vat"
-Category.create name: "Uong bia"
+Category.create name: "Sang trọng"
+Category.create name: "Nhậu"
+Category.create name: "Bình dân"
+Category.create name: "Bar/Pub"
+Category.create name: "Buffet"
+Category.create name: "Lẩu"
+Category.create name: "Cafe/Dessert"
+Category.create name: "Beer Club"
+
 
 
 
@@ -43,7 +48,7 @@ User.create(
       job: Faker::Job.title,
       phonenumber: Faker::PhoneNumber.cell_phone,
       description: Faker::Lorem.sentence(5),
-      avatar: Faker::Avatar.image
+      avatar: open(Faker::Avatar.image)
     }
   )
 end
