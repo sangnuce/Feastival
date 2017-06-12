@@ -10,7 +10,7 @@ class Supports::Group
   end
 
   def all_groups
-    @groups = Group.all
+    @groups = Group.odered_by_time
   end
 
   def message
