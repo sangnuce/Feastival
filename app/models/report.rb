@@ -6,6 +6,5 @@ class Report < ApplicationRecord
 
   validates :content, presence: true
 
-  scope :not_resolved, ->{where resolved: false}
   scope :odered_by_time, ->{order created_at: :desc}
 end

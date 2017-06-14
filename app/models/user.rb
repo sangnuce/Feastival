@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
 
-  has_many :owned_groups, foreign_key: :creator_id,
+  has_many :created_groups, foreign_key: :creator_id,
     class_name: Group.name, dependent: :destroy
   has_many :groups, through: :group_users
   has_many :group_users, dependent: :destroy
@@ -21,4 +21,11 @@ class User < ApplicationRecord
   end
 
   scope :not_admin, ->{where is_admin: false}
+  scope :created_in_time, ->start_time, end_time do
+    where created_at: start_time..end_time
+  end
+
+  def joined_groups
+    self.groups.where.not creator_id: self.id
+  end
 end
