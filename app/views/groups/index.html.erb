@@ -12,9 +12,10 @@
               <% if count_user_create_group == 0 %>
                 <%= link_to t(".new"), new_group_path,
                   class: "btn btn-primary btn-text",
-                  data: {toggle: :modal, target: "#Modal-Create-Group"} %>
+                  data: {toggle: :modal, target: "#modal-create-group"} %>
                 <%= render "shared/modal_group_form",
-                  group: @group_supports.group_new, categories: @categories %>
+                  group: @group_supports.group_new,
+                  categories: @group_supports.initalize_categories %>
               <% else %>
                 <div class="alert alert-danger">
                   <strong><%= t ".danger" %></strong>
@@ -24,7 +25,10 @@
             </div>
           <% end %>
           <div id="all-group">
-            <%= render @groups %>
+            <% @groups.each do |group| %>
+              <%= render "group", group: group,
+                group_user_build: @group_supports.group_user(group) %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -46,3 +50,6 @@
     </div>
   </div>
 <% end %>
+<%= render "shared/modal_chart_group", chart: @group_supports.chart %>
+<%= render "shared/modal_chart_group_ratio",
+  chart: @group_supports.chart_ratio %>
