@@ -139,8 +139,8 @@ $blue-34: #3498db;
 }
 
 .title-group {
-  font-weight: bold;
   float: left;
+  font-weight: bold;
   width: 20%;
 }
 
@@ -160,25 +160,6 @@ $blue-34: #3498db;
   font-weight: 600;
 }
 
-.user-list tbody td>img {
-  float: left;
-  margin-right: 15px;
-  max-width: 50px;
-  position: relative;
-}
-
-.table tbody tr td:first-child {
-  font-size: 1.125em;
-  font-weight: 300;
-}
-
-.table tbody tr td {
-  border-top: 1px solid $white-e7;
-  font-size: .875em;
-  padding: 12px 8px;
-  vertical-align: middle;
-}
-
 .btn-modal {
   width: 70px;
 }
@@ -189,4 +170,11 @@ $blue-34: #3498db;
 
 .row {
   margin-top: 1%;
+}
+
+.user-list img {
+  float: left;
+  margin-right: 15px;
+  max-width: 50px;
+  position: relative;
 }

@@ -26,4 +26,7 @@ class Group < ApplicationRecord
   end
 
   scope :odered_by_time, ->{order time: :desc}
+  scope :created_in_time, ->start_time, end_time do
+    where created_at: start_time..end_time
+  end
 end

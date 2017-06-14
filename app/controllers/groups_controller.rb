@@ -3,9 +3,7 @@ class GroupsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create]
   before_action :initialize_groups, only: [:new, :create]
-  before_action :initalize_categories, except: :destory
-  before_action :init_supports, only: [:index, :show]
-  before_action :load_status, only: :show
+  before_action :init_supports, except: :destory
 
   def index
     @groups = Group.odered_by_time.page(params[:page]).per Settings.per_page
@@ -15,7 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = current_user.owned_groups.build group_params
+    @group = current_user.created_groups.build group_params
     if @group.save
       current_user.group_users.create! group_id: @group.id
       flash[:success] = t ".created"
@@ -56,17 +54,7 @@ class GroupsController < ApplicationController
   end
 
   def initialize_groups
-    @group = current_user.owned_groups.build
-  end
-
-  def initalize_categories
-    @categories = Category.all.map do |category|
-      [category.name, category.id]
-    end
-  end
-
-  def load_status
-    @select_statuses = Group.status_attributes_for_select
+    @group = current_user.created_groups.build
   end
 
   def init_supports

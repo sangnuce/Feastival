@@ -1,14 +1,13 @@
 class UsersController < ApplicationController
-  before_action :load_genders, only: :edit
-
   load_and_authorize_resource
+  before_action :load_genders, only: :edit
+  before_action :init_supports, only: [:index, :show]
 
   def index
     @users = User.not_admin.page(params[:page]).per Settings.per_page
   end
 
   def show
-    @user_supports = Supports::User.new user: @user
   end
 
   def edit
@@ -39,5 +38,9 @@ class UsersController < ApplicationController
 
   def load_genders
     @select_genders = Profile.gender_attributes_for_select
+  end
+
+  def init_supports
+    @user_supports = Supports::User.new user: @user
   end
 end
