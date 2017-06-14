@@ -1,11 +1,12 @@
 var App;
 
 jQuery(document).on('turbolinks:load', function() {
-  var messages, messages_to_bottom;
-  messages = $('#messages');
+  var messages = $('#messages');
+  var chatarea = $('#chat-area');
+
   if ($('#messages').length > 0) {
-    messages_to_bottom = function() {
-      messages.scrollTop(messages.prop('scrollHeight'));
+    var messages_to_bottom = function() {
+      chatarea.scrollTop(chatarea.prop('scrollHeight'));
     };
     messages_to_bottom();
     App.global_chat = App.cable.subscriptions.create({
@@ -48,12 +49,26 @@ jQuery(document).on('turbolinks:load', function() {
         });
       }
     });
+
+    $('#message_content').on('keydown', function(a) {
+      if (a.keyCode == 13 && !a.shiftKey){
+        a.preventDefault();
+        var textvalue = $(this).val().replace(/^\s+|\s+$/,'');
+        $(this).val(textvalue);
+        if (textvalue.length > 0) {
+          App.global_chat.send_message(textvalue, messages.data('group-id'));
+          $(this).val('');
+        }
+      }
+    });
+
+
     return $('#new_message').submit(function(e) {
       e.preventDefault();
-      var textarea;
-      textarea = $(this).find('#message_content');
-      if ($.trim(textarea.val()).length > 1) {
-        App.global_chat.send_message(textarea.val(), messages.data('group-id'));
+      var textarea = $(this).find('#message_content');
+      var textvalue = textarea.val().replace(/^\s+|\s+$/,'');
+      if ($.trim(textarea.val()).length > 0) {
+        App.global_chat.send_message(textvalue, messages.data('group-id'));
         textarea.val('');
       }
       return false;

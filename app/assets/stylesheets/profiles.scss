@@ -65,7 +65,7 @@ $background-hover: #fafcfd;
 .profile-usertitle-name {
   color: $color-name;
   font-family: 'Times New Roman';
-  font-size: 20px;
+  font-size: 1.2em;
   font-weight: 600;
   margin-bottom: 7px;
   margin-top: 5px;
@@ -74,10 +74,12 @@ $background-hover: #fafcfd;
 
 .profile-usertitle-main {
   color: $color-details;
-  font-size: 12px;
+  font-size: 1em;
   font-weight: 600;
   margin-bottom: 7px;
   margin-left: 40px;
+  margin-right: 40px;
+  overflow-wrap: break-word;
 }
 
 .profile-userbuttons {

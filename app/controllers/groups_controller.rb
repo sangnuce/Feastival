@@ -6,7 +6,6 @@ class GroupsController < ApplicationController
   before_action :init_supports, except: :destory
 
   def index
-    @groups = Group.odered_by_time.page(params[:page]).per Settings.per_page
   end
 
   def new
