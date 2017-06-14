@@ -2,7 +2,7 @@
   <% if current_user.current_user? message.user %>
     <li class="right clearfix">
       <span class="chat-img1 pull-right">
-        <%= image_tag get_avatar(message.user.profile.avatar_url),
+        <%= image_tag user_avatar(message.user.profile.avatar_url),
           class: "img-circle avatar-message" %>
       </span>
       <div class="chat-body2 clearfix">
@@ -12,7 +12,7 @@
   <% else %>
     <li class="left clearfix">
       <span class="chat-img1 pull-left">
-        <%= image_tag get_avatar(message.user.profile.avatar_url),
+        <%= image_tag user_avatar(message.user.profile.avatar_url),
           class: "img-circle avatar-message" %>
       </span>
       <div class="chat-body1 clearfix">

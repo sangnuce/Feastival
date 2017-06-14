@@ -5,6 +5,7 @@ class Group < ApplicationRecord
   belongs_to :category
 
   has_many :group_users, dependent: :destroy
+  has_many :leave_groups, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :notifications, as: :notifiable, dependent: :destroy
   has_many :reports, as: :reported, dependent: :destroy
@@ -23,6 +24,11 @@ class Group < ApplicationRecord
         [I18n.t("statuses.#{status}"), status]
       end
     end
+  end
+
+  def check_leave user
+    return false unless user
+    self.leave_groups.pluck(:user_id).include? user.id
   end
 
   scope :odered_by_time, ->{order time: :desc}

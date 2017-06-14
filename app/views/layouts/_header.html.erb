@@ -1,10 +1,10 @@
 <nav class="navbar navbar-light my-nav navbar-fixed-top">
   <div class="container">
     <div class="row">
-      <ul class="nav navbar-nav navbar-left col-md-4">
+      <ul class="nav navbar-nav navbar-left col-md-2">
         <li><%= link_to t("feastival"), root_path, class: "logo" %></li>
       </ul>
-      <div class="col-sm-4 nav-search">
+      <div class="col-sm-5 nav-search">
         <form class="navbar-nav navbar-form center search-form" role="search">
           <div class="input-group add-on search-input">
             <input class="form-control" placeholder="Search" name="srch-term"
@@ -17,7 +17,7 @@
           </div>
         </form>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-5">
         <% if user_signed_in? %>
           <ul class="nav navbar-nav navbar-right">
             <% if current_user.is_admin? %>
@@ -57,7 +57,7 @@
                 <% end %>
                 <ul class="dropdown-menu">
                   <li>
-                     <%= link_to groups_path do %>
+                    <%= link_to groups_path do %>
                       <span class="fa fa-list"></span>
                       <%= t ".list_groups" %>
                     <% end %>
@@ -104,6 +104,7 @@
           </ul>
         <% else %>
           <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to t(".group"), groups_path %></li>
             <li><%= link_to t(".about"), page_path(page: "about") %></li>
             <li><%= link_to t(".help"), page_path(page: "help") %></li>
             <li><%= link_to t(".contact"), page_path(page: "contact") %></li>

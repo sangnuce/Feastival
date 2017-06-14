@@ -1,6 +1,6 @@
 <tr id="delete_user_<%= user.id %>">
   <td>
-    <%= image_tag get_avatar(user.profile.avatar_url),
+    <%= image_tag user_avatar(user.profile.avatar_url),
       class: "img-responsive img-admin" %>
     <%= link_to user.profile.name, user_path(user), class: "user-link" %>
   </td>

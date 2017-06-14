@@ -1,4 +1,17 @@
-<%= form_for group_user, html: {class: "join-form"} do |f| %>
-  <%= f.hidden_field :group_id, value: group.id %>
-  <%= f.submit t(".join_group"), class: "btn btn-danger" %>
+<% if group.check_leave current_user %>
+  <%= link_to t(".join_group"), "#", class: "btn btn-danger btn-leave-group",
+    data: {toggle: :modal, target: "#modal-error-leave-group_#{group.id}"} %>
+<% else %>
+  <%= form_for group_user do |f| %>
+    <%= f.hidden_field :group_id, value: group.id %>
+    <%= f.submit t(".join_group"), class: "btn btn-danger" %>
+  <% end %>
 <% end %>
+
+<div class="modal fade" id="modal-error-leave-group_<%= group.id %>">
+  <div class="modal-dialog">
+    <div class="alert alert-danger">
+      <strong><%= t ".danger" %></strong> <%= t ".message" %>
+    </div>
+  </div>
+</div>

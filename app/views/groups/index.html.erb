@@ -17,18 +17,15 @@
                   group: @group_supports.group_new,
                   categories: @group_supports.initalize_categories %>
               <% else %>
-                <div class="alert alert-danger">
-                  <strong><%= t ".danger" %></strong>
-                  <%= t ".message" %>
-                </div>
+                <%= link_to t(".new"), "#",
+                  class: "btn btn-primary btn-text",
+                  data: {toggle: :modal, target: "#modal-error-join-group"} %>
+                <%= render "shared/modal_error_join_group" %>
               <% end %>
             </div>
           <% end %>
           <div id="all-group">
-            <% @groups.each do |group| %>
-              <%= render "group", group: group,
-                group_user_build: @group_supports.group_user(group) %>
-            <% end %>
+            <%= render @groups %>
           </div>
         </div>
       </div>
