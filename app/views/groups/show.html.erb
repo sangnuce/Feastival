@@ -37,7 +37,9 @@
         <div class="col-md-3 info-group">
           <div class="row">
             <%= render "info_group", group: @group,
-              group_supports: @group_supports %>
+              categories: @group_supports.initalize_categories,
+              group_supports: @group_supports,
+              select_statuses: @group_supports.load_status %>
           </div>
         </div>
       </div>

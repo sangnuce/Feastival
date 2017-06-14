@@ -25,7 +25,7 @@
             <%= t ".info" %>
           <% end %>
           <%= render "shared/modal_info_group", group: group,
-            group_user_build: @group_supports.group_user(group) %>
+            group_user_build: group_user_build %>
         <% else %>
           <%= link_to group_path(group), class:"btn btn-primary" do %>
             <span class="glyphicon glyphicon-comment"></span>
