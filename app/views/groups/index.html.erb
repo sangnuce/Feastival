@@ -5,8 +5,9 @@
     <%= render "show_index_admin", groups: @groups %>
   <% else %>
     <div class="container-fluid group-index">
-      <div class="container">
-        <div class="row">
+      <div class="row">
+        <div class="col-md-4">
+          <h1 class="center"><%= t ".nearby" %></h1>
           <% if can? :create, Group %>
             <div class="group-new-btn">
               <% if count_user_create_group == 0 %>
@@ -25,27 +26,110 @@
             </div>
           <% end %>
           <div id="all-group">
-            <%= render @groups %>
+            <%= render @group_supports.all_groups %>
+          </div>
+        </div>
+        <div class="col-md-8 map-container">
+          <div id="map-canvas" class="map-canvas">
+            <div class="center title-custom-nearby">
+              <h1><%= t ".custom_nearby" %></h1>
+            </div>
+            <div id="map" class="map-index"></div>
+          </div>
+          <div id="sideNavOpen" class="side-btn">&#9776; ? </div>
+          <div id="map-helper" class="sidenav">
+            <a id="sideNavClose" href="javascript:void(0)"
+              class="closebtn">&times;</a>
+            <div class="custom-nearby">
+              <ul class="legends">
+                <li>
+                  <img src="http://maps.google.com/mapfiles/kml/paddle/purple-stars.png",
+                    class="small" />
+                  <%= t ".my_marker" %>
+                </li>
+                <li>
+                  <img src="http://maps.google.com/mapfiles/kml/paddle/red-circle.png",
+                      class="small" />
+                  <%= t ".group_marker" %>
+                </li>
+                <li class="center nearby-slider"><p><%= t ".slider_help" %></p></li>
+                <li class="center"><input id="nearby-slider" type="range" min="1"
+                  max="10" step="0.1" value="3" class="nearby-slider" /></li>
+                <li class="center"><input id="nearby-number" type="number" min="1"
+                  step="0.1" max="10" value="3" class="nearby-input" /></li>
+                <li class="center"><%= t ".input_help" %></li>
+                <li class="center"><input id="find-place" type="text"
+                  class="find-place" /></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
   <% end %>
 <% else %>
-  <div class="container-fluid group-index">
-    <div class="container">
+    <div class="container-fluid group-index">
       <div class="row">
-        <% if can? :create, Group %>
-          <div class="group-new-btn">
-            <%= link_to t(".new"), new_group_path, class: "btn btn-primary" %>
+        <div class="col-md-4">
+          <h1 class="center"><%= t ".nearby" %></h1>
+          <% if can? :create, Group %>
+            <div class="group-new-btn">
+              <% if count_user_create_group == 0 %>
+                <%= link_to t(".new"), new_group_path,
+                  class: "btn btn-primary btn-text",
+                  data: {toggle: :modal, target: "#modal-create-group"} %>
+                <%= render "shared/modal_group_form",
+                  group: @group_supports.group_new,
+                  categories: @group_supports.initalize_categories %>
+              <% else %>
+                <%= link_to t(".new"), "#",
+                  class: "btn btn-primary btn-text",
+                  data: {toggle: :modal, target: "#modal-error-join-group"} %>
+                <%= render "shared/modal_error_join_group" %>
+              <% end %>
+            </div>
+          <% end %>
+          <div id="all-group">
+            <%= render @group_supports.all_groups %>
           </div>
-        <% end %>
-        <div id="all-group">
-          <%= render @group_supports.all_groups %>
+        </div>
+        <div class="col-md-8 map-container">
+          <div id="map-canvas" class="map-canvas">
+            <div class="center title-custom-nearby">
+              <h1><%= t ".custom_nearby" %></h1>
+            </div>
+            <div id="map" class="map-index"></div>
+          </div>
+          <div id="sideNavOpen" class="side-btn">&#9776; ? </div>
+          <div id="map-helper" class="sidenav">
+            <a id="sideNavClose" href="javascript:void(0)"
+              class="closebtn">&times;</a>
+            <div class="custom-nearby">
+              <ul class="legends">
+                <li>
+                  <img src="http://maps.google.com/mapfiles/kml/paddle/purple-stars.png",
+                    class="small" />
+                  <%= t ".my_marker" %>
+                </li>
+                <li>
+                  <img src="http://maps.google.com/mapfiles/kml/paddle/red-circle.png",
+                      class="small" />
+                  <%= t ".group_marker" %>
+                </li>
+                <li class="center nearby-slider"><p><%= t ".slider_help" %></p></li>
+                <li class="center"><input id="nearby-slider" type="range" min="1"
+                  max="10" step="0.1" value="3" class="nearby-slider" /></li>
+                <li class="center"><input id="nearby-number" type="number" min="1"
+                  step="0.1" max="10" value="3" class="nearby-input" /></li>
+                <li class="center"><%= t ".input_help" %></li>
+                <li class="center"><input id="find-place" type="text"
+                  class="find-place" /></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 <% end %>
 <%= render "shared/modal_chart_group", chart: @group_supports.chart %>
 <%= render "shared/modal_chart_group_ratio",

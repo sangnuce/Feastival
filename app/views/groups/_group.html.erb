@@ -1,46 +1,25 @@
-<div class="col-md-4 group" id="group-<%= group.id %>"
+<div id="group-<%= group.id %>"
   data-id="<%= group.id %>"
   data-lng="<%= group.longitude %>"
   data-lat="<%= group.latitude %>"
-  data-distance="">
-  <div class="card group-card">
-    <%= image_tag user_avatar(group.creator.profile.avatar),
-      class: "img-circle image-group" %>
-    <div class="card-block center">
-      <h3 class="card-title"><%= group.category.name %></h3>
-      <h4 class="card-text"><%= group.title %></h4>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><strong><%= t ".nearby" %></strong>
+  data-distance=""
+  data-category="<%= group.category.name %>"
+  data-title="<%= group.title %>"
+  data-count="<%= group.users.count %>"
+  data-size="<%= group.size %>"
+  data-time="<%= l group.time, format: :time_info_group %>"
+  data-address="<%= group.address %>"
+  data-avatar="<%= user_avatar group.creator.profile.avatar_url %>"
+  class="group-card group">
+  <div class="group-detail">
+    <%= image_tag user_avatar(group.creator.profile.avatar_url),
+      class: "creator-avatar" %>
+  <div class="group-title">
+    <%= link_to t(".info"), group_path(group), class: "btn btn-primary" %>
+  </div>
+    <div class="nearby">
+      <%= t ".nearby" %>
         <span class="distance"></span> <%= t ".km" %>
-      </li>
-      <li class="list-group-item">
-        <strong><%= t ".time" %> </strong>
-        <%= l group.time, format: :time_info_message %>
-      </li>
-      <li class="list-group-item">
-        <strong><%= t ".address" %> </strong><%= group.address %>
-      </li>
-      <li class="list-group-item">
-        <strong><%= t ".size" %> </strong>
-        <%= group.group_users.count.to_s + "/" + group.size.to_s %>
-      </li>
-      <li class="list-group-item">
-        <% if check_join_group group.id %>
-          <%= link_to "#", class:"btn btn-primary",
-            data: {toggle: :modal, target: "#myModal_#{group.id}"} do %>
-            <span class="glyphicon glyphicon-info-sign"></span>
-            <%= t ".info" %>
-          <% end %>
-          <%= render "shared/modal_info_group", group: group,
-            group_user_build: @group_supports.group_user(group) %>
-        <% else %>
-          <%= link_to group_path(group), class:"btn btn-primary" do %>
-            <span class="glyphicon glyphicon-comment"></span>
-            <%= t ".chat" %>
-          <% end %>
-        <% end %>
-      </li>
-    </ul>
+    </div>
   </div>
 </div>
