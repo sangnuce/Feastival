@@ -230,6 +230,7 @@ vi:
               blank: "Email không được để trống"
               taken: "Email đã có người sử dụng"
             password:
+              too_short: "Mật khẩu quá ngắn"
               blank: "Mật khẩu không được để trống"
             password_confirmation:
               confirmation: "Mật khẩu không khớp"
@@ -241,6 +242,7 @@ vi:
               blank: "Ngày sinh không được để trống"
             address:
               blank: "Địa chỉ không được để trống"
+              too_long: "Địa chỉ quá dài"
             job:
               blank: "Nghề nghiệp không được để trống"
             phonenumber:
@@ -271,4 +273,3 @@ en:
     time: "Thời gian: "
     address: "Địa chỉ: "
     count:  "Số lượng: "
-
