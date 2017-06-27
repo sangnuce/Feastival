@@ -48,7 +48,6 @@ User.create(
       job: Faker::Job.title,
       phonenumber: Faker::PhoneNumber.cell_phone,
       description: Faker::Lorem.sentence(5),
-      avatar: open(Faker::Avatar.image)
     }
   )
 end

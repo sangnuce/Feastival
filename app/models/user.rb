@@ -22,9 +22,6 @@ class User < ApplicationRecord
   end
 
   scope :not_admin, ->{where is_admin: false}
-  scope :created_in_time, ->start_time, end_time do
-    where created_at: start_time..end_time
-  end
 
   def joined_groups
     self.groups.where.not creator_id: self.id
