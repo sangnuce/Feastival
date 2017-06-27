@@ -15,7 +15,7 @@ RSpec.describe Profile, type: :model do
   end
 
   describe "validations" do
-    before do
+    before :each do
       @profile = FactoryGirl.create(:profile)
     end
 
