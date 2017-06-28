@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
 
 
   describe "validations" do
-    before do
+    before :each do
       @user = FactoryGirl.build :user
     end
 
