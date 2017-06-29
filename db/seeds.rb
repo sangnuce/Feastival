@@ -29,8 +29,24 @@ User.create(
     birthday: Time.now,
     address: "Framgia lab 434 Tran Khat Chan",
     job: "Trainee",
-    phonenumber:"0943979669",
-    description:"Admin"
+    phonenumber: "0943979669",
+    description: "Admin"
+  }
+)
+
+User.create(
+  email:"manager@gmail.com",
+  password:"123456",
+  password_confirmation:"123456",
+  is_manager: true,
+  profile_attributes: {
+    name:"Manager",
+    gender: 1,
+    birthday: Time.now,
+    address: "Framgia lab 434 Tran Khat Chan",
+    job: "Trainee",
+    phonenumber: "0943979669",
+    description: "Manager"
   }
 )
 
@@ -67,4 +83,13 @@ end
 
 Group.all.each do |group|
   GroupUser.create(group_id: group.id, user_id: group.creator_id)
+end
+
+10.times do
+  Place.create(
+    manager_id: 2,
+    category_id: 1,
+    title: Faker::Lorem.sentence(1),
+    address: Faker::Address.street_address
+  )
 end

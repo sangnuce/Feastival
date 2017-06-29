@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607145941) do
+ActiveRecord::Schema.define(version: 20170629011617) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20170607145941) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.integer  "status",      default: 0
+    t.integer  "place_id"
     t.index ["creator_id"], name: "index_groups_on_creator_id"
   end
 
@@ -64,6 +65,23 @@ ActiveRecord::Schema.define(version: 20170607145941) do
     t.index ["group_id"], name: "index_markers_on_group_id"
   end
 
+  create_table "menu_items", force: :cascade do |t|
+    t.integer  "menu_id"
+    t.string   "name"
+    t.integer  "price"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "place_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
@@ -82,6 +100,29 @@ ActiveRecord::Schema.define(version: 20170607145941) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string   "image"
+    t.string   "imageable_type"
+    t.integer  "imageable_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "title"
+    t.text     "address"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "website"
+    t.text     "description"
+    t.integer  "category_id"
+    t.integer  "manager_id"
+    t.boolean  "is_approved", default: false
+    t.string   "phonenumber"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -122,6 +163,7 @@ ActiveRecord::Schema.define(version: 20170607145941) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "activated",           default: true
+    t.boolean  "is_manager"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

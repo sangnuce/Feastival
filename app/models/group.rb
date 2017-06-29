@@ -1,8 +1,9 @@
 class Group < ApplicationRecord
   enum status: [:fail, :success]
 
-  belongs_to :creator, class_name: User.name
   belongs_to :category
+  belongs_to :creator, class_name: User.name
+  belongs_to :place
 
   has_many :group_users, dependent: :destroy
   has_many :leave_groups, dependent: :destroy
@@ -11,7 +12,7 @@ class Group < ApplicationRecord
   has_many :reports, as: :reported, dependent: :destroy
   has_many :users, through: :group_users
 
-  validates :address, :time, :size, :title, :category, presence: true
+  validates :address, :category, :size, :time, :title, presence: true
 
   def owned_by? user
     return false unless user
