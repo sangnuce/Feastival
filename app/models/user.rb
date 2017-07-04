@@ -2,8 +2,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :rememberable,
     :validatable
 
-  has_one :profile, dependent: :destroy
-
   has_many :created_groups, foreign_key: :creator_id,
     class_name: Group.name, dependent: :destroy
   has_many :groups, through: :group_users
@@ -13,7 +11,9 @@ class User < ApplicationRecord
   has_many :notifications, dependent: :destroy
   has_many :owned_reports, dependent: :destroy,
     foreign_key: :reporter_id, class_name: Report.name
+  has_many :places, foreign_key: :manager_id, dependent: :destroy
   has_many :reports, dependent: :destroy, as: :reported
+  has_one :profile, dependent: :destroy
 
   accepts_nested_attributes_for :profile, update_only: true
 
